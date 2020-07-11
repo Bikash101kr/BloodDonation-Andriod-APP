@@ -1,0 +1,2 @@
+rootProject.name='ServeHumanity'
+include ':app'
