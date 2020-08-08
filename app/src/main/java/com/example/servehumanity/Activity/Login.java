@@ -23,6 +23,7 @@ public class Login extends AppCompatActivity {
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword= findViewById(R.id.edtPassword);
         tvRegister= findViewById(R.id.tvRegister);
+        btnLogin = findViewById(R.id.btnLogin);
 
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,6 @@ public class Login extends AppCompatActivity {
         });
     }
     private  void  login() {
-        
+
     }
 }
