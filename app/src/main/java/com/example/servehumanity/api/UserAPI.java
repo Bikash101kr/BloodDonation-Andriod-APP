@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 public interface UserAPI {
     //abstract method
     @POST("users/register")
-    Call<UserResponse> registerUser(@Body User user); //calling POST req, sending user in body.
+    Call<UserResponse>registerUser(@Body User user); //calling POST req, sending user in body.
 
     @FormUrlEncoded
     @POST("users/login")
