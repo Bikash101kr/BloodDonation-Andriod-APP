@@ -25,17 +25,5 @@ public class UserResponse {
     public void setStatus(String status) {
         this.status = status;
     }
-    //    String string ;
-//
-//    public UserResponse(String string) {
-//        this.string = string;
-//    }
-//
-//    public String getString() {
-//        return string;
-//    }
-//
-//    public void setString(String string) {
-//        this.string = string;
-//    }
+
 }

@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.servehumanity.R;
 import com.example.servehumanity.URL.URL;
 import com.example.servehumanity.api.UserAPI;
