@@ -3,9 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:gravity="center_horizontal"
     tools:context=".Activity.Login">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"/>
 
     <EditText
         android:id="@+id/edtUsername"
@@ -13,19 +24,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:hint="Username"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:inputType="text"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:drawablePadding="10dp"
+        android:background="@drawable/style_edit_text"
+        />
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:textSize="20dp"
+        android:textSize="20sp"
+        android:inputType="textPassword"
         android:layout_margin="30dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:background="@drawable/style_edit_text"
+        android:drawablePadding="10dp"
         />
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_marginBottom="20px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Remember Me" />
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"

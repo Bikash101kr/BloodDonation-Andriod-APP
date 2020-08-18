@@ -3,52 +3,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".Activity.Register">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register For New Account"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textColor="#0a0a85"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please fill all the fields."
+        android:textSize="20sp"
+        android:layout_marginBottom="10dp"/>
     <EditText
         android:id="@+id/edtFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First name"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:maxLines="1"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
     <EditText
         android:id="@+id/edtLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Last name"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:maxLines="1"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
     <EditText
         android:id="@+id/edtAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Address"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
     <EditText
         android:id="@+id/edtPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Phone"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:maxLines="1"
+        android:inputType="phone"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
 
     <EditText
         android:id="@+id/edtUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:drawablePadding="10dp"/>
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:textSize="30dp"
-        android:layout_margin="20dp"/>
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:layout_margin="10dp"
+        android:drawablePadding="10dp"/>
+        <EditText
+            android:id="@+id/edtConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_margin="10dp"
+            android:hint="Confirm Password"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="10dp"
+            />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnRegister"
@@ -57,6 +103,6 @@
         android:text="Register"
         android:background="#023e8a"
         android:textSize="20sp"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:textColor="#fff"/>
 </LinearLayout>
