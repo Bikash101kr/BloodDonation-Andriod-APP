@@ -1,5 +1,4 @@
 package com.example.servehumanity.model;
-public class Profile {
 
-    }
+public class Profile {
 }
