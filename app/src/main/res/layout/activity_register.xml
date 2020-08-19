@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".Activity.Register">
+    tools:context=".Activity.RegisterActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,11 +68,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+
         android:inputType="text"
         android:textSize="20sp"
         android:layout_margin="10dp"
         android:drawablePadding="10dp"/>
+<!--        android:drawableLeft="@drawable/ic_baseline_account_circle_24"-->
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
@@ -80,9 +81,10 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:textSize="20sp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
+
         android:layout_margin="10dp"
         android:drawablePadding="10dp"/>
+<!--        android:drawableLeft="@drawable/ic_baseline_lock_24"-->
         <EditText
             android:id="@+id/edtConfirmPassword"
             android:layout_width="match_parent"
@@ -91,9 +93,10 @@
             android:layout_margin="10dp"
             android:hint="Confirm Password"
             android:textSize="20sp"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
+
             android:drawablePadding="10dp"
             />
+<!--        android:drawableLeft="@drawable/ic_baseline_lock_24"-->
     </LinearLayout>
 
     <Button

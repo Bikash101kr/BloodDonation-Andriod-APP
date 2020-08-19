@@ -1,66 +1,139 @@
 package com.example.servehumanity.fragments;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.servehumanity.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link SystemToolsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+import static androidx.core.content.ContextCompat.getSystemService;
+
 public class SystemToolsFragment extends Fragment {
+    LinearLayout linearLayout;
+    ListView lstView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private SensorManager sensorManager;
+    SharedPreferences sharedPreferences;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    List<String> list = new ArrayList<String>();
+    final Integer FINGER_PRINT = 0;
+    final Integer ACCELEROMETER = 1;
+    final Integer GYROSCOPE = 2;
+    final Integer PROXIMITY = 3;
+    private Boolean isEyeProtectionModeOn = false;
+    private Boolean isFingerPrintAuthOn = false;
+
+    Float xAxis;
 
     public SystemToolsFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AboutUsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SystemToolsFragment newInstance(String param1, String param2) {
-        SystemToolsFragment fragment = new SystemToolsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            list.add("Finger print authentication:\tEnable");
+            list.add("Eye protection mode:\tEnable");
         }
     }
-
+    @SuppressLint("ResourceASColor")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_system_tools, container, false);
+        View view = inflater.inflate(R.layout.fragment_system_tools, container, false);
+        linearLayout = view.findViewById(R.id.linearLayout);
+        lstView = view.findViewById(R.id.lstView);
+
+        final ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1  , list);
+        lstView.setAdapter(arrayAdapter);
+
+        lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == ACCELEROMETER) {
+                    if (isEyeProtectionModeOn) {
+                        list.set(position, "Eye protection mode:\tEnable");
+                        linearLayout.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                        arrayAdapter.notifyDataSetChanged();
+                        isEyeProtectionModeOn = false;
+                    } else if (!isEyeProtectionModeOn) {
+                        list.set(position, "Eye protection mode:\tDisable\t(Shake to see changes)");
+                        arrayAdapter.notifyDataSetChanged();
+                        isEyeProtectionModeOn = true;
+                    }
+                }
+
+                if (position == FINGER_PRINT) {
+                    sharedPreferences = getContext().getSharedPreferences("Auth", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    if (sharedPreferences.getString("fingerPrint", "false").equals("false")){
+                        list.set(position, "Finger print authentication:\tDisable");
+                        editor.putString("fingerPrint", "true");
+                        editor.commit();
+                    } else  if(sharedPreferences.getString("fingerPrint", "false").equals("true")) {
+                        Log.i("Bool-else", isEyeProtectionModeOn.toString());
+                        list.set(position, "Finger print authentication:\tEnable");
+                        editor.putString("fingerPrint", "false");
+                        editor.commit();
+                    }
+                    arrayAdapter.notifyDataSetChanged();
+                }
+            }
+        });
+        activateAccelerometer();
+        return view;
+    }
+
+    private void activateAccelerometer() {
+        sensorManager = (SensorManager) getSystemService(getContext(), SensorManager.class);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        SensorEventListener sel = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                float[] values = event.values;
+                xAxis = values[0];
+                if (xAxis < -35 || xAxis > 35) {
+                    isEyeProtectionModeOn = !isEyeProtectionModeOn;
+                    if (isEyeProtectionModeOn) {
+                        linearLayout.setBackgroundColor(getResources().getColor(R.color.white));
+                        Toast.makeText(getContext(), "Eye protection off", Toast.LENGTH_SHORT).show();
+                    } else {
+                        linearLayout.setBackgroundColor(getResources().getColor(R.color.warm));
+                        Toast.makeText(getContext(), "Eye protection on", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+            }
+        };
+
+        if (sensor != null) {
+            sensorManager.registerListener(sel, sensor, SensorManager.SENSOR_STATUS_ACCURACY_HIGH);
+        }
     }
 }

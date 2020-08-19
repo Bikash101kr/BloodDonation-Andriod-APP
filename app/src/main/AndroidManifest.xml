@@ -16,10 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".sensors.Fingerprint_Activity"></activity>
+        <activity android:name=".Activity.ProfileActivity"></activity>
+        <activity android:name=".sensors.AccelerometerActivity" />
+        <activity android:name=".sensors.Fingerprint_Activity" />
         <activity android:name=".Activity.DashboardActivity" />
-        <activity android:name=".Activity.Register" />
-        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.RegisterActivity" />
+        <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

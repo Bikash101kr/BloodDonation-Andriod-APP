@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.servehumanity.Activity.DashboardActivity;
-import com.example.servehumanity.Activity.Login;
 import com.example.servehumanity.R;
 
 import java.util.concurrent.Executor;

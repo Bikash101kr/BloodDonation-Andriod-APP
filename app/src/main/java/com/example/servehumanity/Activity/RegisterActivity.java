@@ -21,10 +21,8 @@ import com.example.servehumanity.response.UserResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText edtFirstName, edtLastName, edtUsername, edtPassword, edtConfirmPassword, edtPhone, edtAddress;
     Button btnRegister;
     String FirstName, lastName, username, password, confirmPassword, phone, address, profileId;
@@ -153,18 +151,18 @@ public class Register extends AppCompatActivity {
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                         if (!response.isSuccessful()) {
                             Log.i("response", "unsuccessful");
-                            Toast.makeText(Register.this, "code: " + response.code(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterActivity.this, "code: " + response.code(), Toast.LENGTH_LONG).show();
                             return;
                         }
                         Log.i("response", "success");
-                        Toast.makeText(Register.this, "Registration Successful", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Register.this, DashboardActivity.class));
+                        Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(RegisterActivity.this, DashboardActivity.class));
 
                     }
 
                     @Override
                     public void onFailure(Call<UserResponse> call, Throwable t) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
+                        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                         builder.setMessage("Unable to connect to server at the time. Please try again later.")
                                 .setPositiveButton(
                                         "Ok",
@@ -179,7 +177,7 @@ public class Register extends AppCompatActivity {
 
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
-                        Toast.makeText(Register.this, "Unsuccessful" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this, "Unsuccessful" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
             }

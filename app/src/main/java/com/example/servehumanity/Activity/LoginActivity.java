@@ -30,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
     TextView tvRegister;
@@ -106,13 +106,13 @@ public class Login extends AppCompatActivity {
         SharedPreferences savedData = getSharedPreferences("User", Context.MODE_PRIVATE);
         Log.i("savedData", savedData.getString("username", "No Data"));
 
-        if (savedData.getString("username", "").isEmpty()) {
-            checkbox1.setChecked(false);
-        } else {
-            checkbox1.setChecked(true);
-            edtUsername.setText(savedData.getString("username", ""));
-            edtPassword.setText(savedData.getString("password", ""));
-        }
+   //     if (savedData.getString("username", "").isEmpty()) {
+//            checkbox1.setChecked(false);
+//        } else {
+//            checkbox1.setChecked(true);
+//            edtUsername.setText(savedData.getString("username", ""));
+//            edtPassword.setText(savedData.getString("password", ""));
+  // }
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -140,9 +140,9 @@ public class Login extends AppCompatActivity {
 
 
                         if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
-                            startActivity(new Intent(Login.this, Fingerprint_Activity.class));
+                            startActivity(new Intent(LoginActivity.this, Fingerprint_Activity.class));
                         } else {
-                            startActivity(new Intent(Login.this, DashboardActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                         }
                         displayNotificationSuccess();
                         finish();
@@ -151,7 +151,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<UserResponse> call, Throwable t) {
                         Log.i("error", Objects.requireNonNull(t.getLocalizedMessage()));
-                        builder = new AlertDialog.Builder(Login.this);
+                        builder = new AlertDialog.Builder(LoginActivity.this);
                         builder.setMessage("Unable to connect to server at the time. Please try again later.")
                                 .setPositiveButton(
                                         "Ok",
@@ -175,7 +175,7 @@ public class Login extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( Login.this, Register.class));
+                startActivity(new Intent( LoginActivity.this, RegisterActivity.class));
             }
         });
 

@@ -9,7 +9,7 @@
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:gravity="center_horizontal"
-    tools:context=".Activity.Login">
+    tools:context=".Activity.LoginActivity">
 
     <ImageView
         android:layout_width="150dp"
@@ -28,10 +28,9 @@
         android:inputType="text"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
         android:drawablePadding="10dp"
-        android:background="@drawable/style_edit_text"
-        />
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+    />
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="match_parent"
@@ -40,10 +39,9 @@
         android:textSize="20sp"
         android:inputType="textPassword"
         android:layout_margin="30dp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
-        android:background="@drawable/style_edit_text"
         android:drawablePadding="10dp"
-        />
+        android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+<!--       android:background="@drawable/style_edit_text"-->
     <CheckBox
         android:id="@+id/checkbox1"
         android:layout_marginBottom="20px"
