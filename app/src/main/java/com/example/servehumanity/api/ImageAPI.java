@@ -1,5 +1,7 @@
 package com.example.servehumanity.api;
 
+import com.example.servehumanity.response.ImageResponse;
+
 import okhttp3.MultipartBody;
 import retrofit2.Call;
 import retrofit2.http.Multipart;
