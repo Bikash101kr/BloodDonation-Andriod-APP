@@ -137,7 +137,8 @@ public class RegisterActivity extends AppCompatActivity {
                 validationError = validateUser(FirstName, lastName, username, password, confirmPassword, phone, address);
 
                 if (validationError) return;
-                        UserAPI userAPI = URL.getInstance().create(UserAPI.class);
+
+                UserAPI userAPI = URL.getInstance().create(UserAPI.class);
 
                 User user = new User(edtFirstName.getText().toString(), edtLastName.getText().toString(),
                         edtAddress.getText().toString(),edtPhone.getText().toString(),

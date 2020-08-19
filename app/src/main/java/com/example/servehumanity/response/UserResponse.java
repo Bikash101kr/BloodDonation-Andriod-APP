@@ -1,12 +1,19 @@
 package com.example.servehumanity.response;
 
 public class UserResponse {
+    private String status, token, id;
 
-    String token;
-    String status;
-
-    public UserResponse(String token, String status) {
+    public UserResponse(String status, String token, String id) {
+        this.status = status;
         this.token = token;
+        this.id = id;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -18,12 +25,11 @@ public class UserResponse {
         this.token = token;
     }
 
-    public String getStatus() {
-        return status;
+    public String getId() {
+        return id;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setId(String id) {
+        this.id = id;
     }
-
 }
