@@ -22,6 +22,7 @@ import com.example.servehumanity.URL.URL;
 import com.example.servehumanity.api.UserAPI;
 import com.example.servehumanity.channel.CreateChannel;
 import com.example.servehumanity.response.UserResponse;
+import com.example.servehumanity.sensors.Fingerprint_Activity;
 
 import java.util.Objects;
 
@@ -133,11 +134,18 @@ public class Login extends AppCompatActivity {
                             return;
                         }
                         URL.token = response.body().getToken();
-                        startActivity(new Intent (Login.this, DashboardActivity.class));
+
+                        SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
+
+
+
+                        if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
+                            startActivity(new Intent(Login.this, Fingerprint_Activity.class));
+                        } else {
+                            startActivity(new Intent(Login.this, DashboardActivity.class));
+                        }
                         displayNotificationSuccess();
                         finish();
-
-
                     }
 
                     @Override
