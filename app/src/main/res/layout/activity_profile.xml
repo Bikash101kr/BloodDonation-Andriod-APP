@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Let's create a profile first!"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="20dp"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:hint="First Name*"
+                android:background="@drawable/style_edit_text"
+                />
+
+
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Last Name*"
+                android:background="@drawable/style_edit_text"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textSize="20sp"
+            android:text="Select Gender*"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/rBtnMale"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/rBtnMale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Male"/>
+            <RadioButton
+                android:id="@+id/rBtnFemale"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Female"/>
+            <RadioButton
+                android:id="@+id/rBtnOthers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Others"/>
+        </RadioGroup>
+        <EditText
+            android:id="@+id/edtAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="Address*"
+            android:layout_marginBottom="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="phone"
+            android:hint="Phone"
+            android:background="@drawable/style_edit_text"
+            />
+
+
+        <EditText
+            android:id="@+id/edtDOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:layout_marginBottom="20dp"
+            android:hint="Date of Birth (Optional)"
+            android:inputType="date"
+            android:textSize="20sp"
+            android:background="@drawable/style_edit_text"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textSize="20sp"
+            android:text="Select Blood Group (Optional)"
+            android:background="@drawable/style_edit_text"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:layout_height="wrap_content"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rBtnAP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="A+" />
+                <RadioButton
+                    android:id="@+id/rBtnBP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="B+" />
+
+                <RadioButton
+                    android:id="@+id/rBtnABP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="AB+" />
+
+                <RadioButton
+                    android:id="@+id/rBtnOP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="O+" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rBtnAN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="A-" />
+
+                <RadioButton
+                    android:id="@+id/rBtnBN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="B-" />
+
+
+
+                <RadioButton
+                    android:id="@+id/rBtnABN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="AB-" />
+
+
+
+                <RadioButton
+                    android:id="@+id/rBtnON"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:maxLines="1"
+                    android:text="O-" />
+            </LinearLayout>
+        </RadioGroup>
+        <EditText
+            android:id="@+id/edtLastDonation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_marginBottom="20dp"
+            android:hint="Last Donation Date (Optional)"
+            android:textSize="20sp"
+            android:background="@drawable/style_edit_text"
+            />
+
+
+        <TextView
+            android:id="@+id/tvPicDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Profile Picture (Optional)"
+            android:textSize="19sp"
+            android:layout_marginBottom="10sp"
+            android:textColor="@color/darkBlue"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+            <ImageView
+                android:id="@+id/imgViewProfile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/profilepic"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="Username" />
+            <Button
+                android:id="@+id/btnUploadProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/blue"
+                android:tag="Upload Profile picture"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:padding="5dp"
+                android:text="Upload" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="30dp"
+            android:tag="Create profile"
+            android:backgroundTint="@color/darkBlue"
+            />
+    </LinearLayout>
+</ScrollView>
