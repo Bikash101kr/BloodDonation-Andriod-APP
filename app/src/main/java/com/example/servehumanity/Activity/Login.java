@@ -33,7 +33,7 @@ public class Login extends AppCompatActivity {
     EditText edtUsername, edtPassword;
     Button btnLogin;
     TextView tvRegister;
-    CheckBox checkbox;
+    CheckBox checkbox1;
     boolean validationError;
     AlertDialog.Builder builder;
     String username;
@@ -91,9 +91,10 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
-        checkbox = findViewById(R.id.checkbox);
+        checkbox1 = findViewById(R.id.checkbox);
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister = findViewById(R.id.tvRegister);
 
@@ -105,9 +106,9 @@ public class Login extends AppCompatActivity {
         Log.i("savedData", savedData.getString("username", "No Data"));
 
         if (savedData.getString("username", "").isEmpty()) {
-            checkbox.setChecked(false);
+            checkbox1.setChecked(false);
         } else {
-            checkbox.setChecked(true);
+            checkbox1.setChecked(true);
             edtUsername.setText(savedData.getString("username", ""));
             edtPassword.setText(savedData.getString("password", ""));
         }
@@ -117,7 +118,7 @@ public class Login extends AppCompatActivity {
                 username = edtUsername.getText().toString().trim();
                 password = edtPassword.getText().toString().trim();
 
-                validationError = validateUser(username, password);
+               validationError = validateUser(username, password);
                 if (validationError) return;
 
                 UserAPI userAPI = URL.getInstance().create(UserAPI.class);
