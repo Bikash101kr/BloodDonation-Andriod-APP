@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
         edtUsername = findViewById(R.id.edtUsername);
         edtPassword = findViewById(R.id.edtPassword);
-        checkbox1 = findViewById(R.id.checkbox);
+        checkbox1 = findViewById(R.id.checkbox1);
         btnLogin = findViewById(R.id.btnLogin);
         tvRegister = findViewById(R.id.tvRegister);
 
@@ -106,13 +106,13 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences savedData = getSharedPreferences("User", Context.MODE_PRIVATE);
         Log.i("savedData", savedData.getString("username", "No Data"));
 
-   //     if (savedData.getString("username", "").isEmpty()) {
-//            checkbox1.setChecked(false);
-//        } else {
-//            checkbox1.setChecked(true);
-//            edtUsername.setText(savedData.getString("username", ""));
-//            edtPassword.setText(savedData.getString("password", ""));
-  // }
+        if (savedData.getString("username", "").isEmpty()) {
+            checkbox1.setChecked(false);
+        } else {
+            checkbox1.setChecked(true);
+            edtUsername.setText(savedData.getString("username", ""));
+            edtPassword.setText(savedData.getString("password", ""));
+   }
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

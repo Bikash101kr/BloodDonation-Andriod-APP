@@ -14,7 +14,7 @@ import retrofit2.http.PUT;
 public interface ProfileAPI {
     @FormUrlEncoded
     @POST("profiles")
-    Call<ProfileResponse> addProfile(@Field("fistName") String firstName,
+    Call<ProfileResponse> addProfile(@Field("firstName") String firstName,
                                      @Field("lastName") String lastName,
                                      @Field("address") String address,
                                      @Field("phone") String phone,

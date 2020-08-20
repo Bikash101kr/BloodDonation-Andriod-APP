@@ -43,7 +43,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     EditText edtFirstName, edtLastName, edtAddress, edtPhone, edtDOB, edtLastDonation;
     Button btnUploadProfile, btnCreate;
     ImageView imgViewProfile;
-    RadioGroup radioGroup, radioGroup2;
+    RadioGroup radioGroup1, radioGroup2;
     RadioButton rBtnMale, rBtnFemale, rBtnOthers;
     RadioButton rBtnAP, rBtnAN, rBtnBP,rBtnBN,rBtnABP, rBtnABN, rBtnOP,rBtnON;
     String imagePath, path, firstName, lastName, address, phone, lastDonation, dateOfBirth, gender, bloodGroup, profileId;
@@ -61,7 +61,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         edtFirstName.setError(null);
 
         if (lastName.length() <= 0) {
-            edtLastName.setError("Please enter password");
+            edtLastName.setError("Please enter last name");
             edtLastName.requestFocus();
             return true;
         }
@@ -92,13 +92,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         edtDOB.clearFocus();
        edtDOB.setError(null);
 
-        if (lastDonation.length() <= 0) {
-            edtLastDonation.setError("Please enter phone number");
-            edtLastDonation.requestFocus();
-            return true;
-        }
-        edtLastDonation.clearFocus();
-        edtLastDonation.setError(null);
 
         return false;
     }
@@ -116,7 +109,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         btnCreate = findViewById(R.id.btnCreate);
         btnUploadProfile = findViewById(R.id.btnUploadProfile);
         imgViewProfile = findViewById(R.id.imgViewProfile);
-        radioGroup = findViewById(R.id.radioGroup);
+        radioGroup1 = findViewById(R.id.radioGroup1);
         radioGroup2 = findViewById(R.id.radioGroup2);
         rBtnMale = findViewById(R.id.rBtnMale);
         rBtnFemale = findViewById(R.id.rBtnFemale);
@@ -148,6 +141,54 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         phone = edtPhone.getText().toString().trim();
         dateOfBirth = edtDOB.getText().toString().trim();
         lastDonation = edtLastDonation.getText().toString().trim();
+
+//        public void onRadioButtonClicked(View view) {
+//            // Is the button now checked?
+//            boolean checked = ((RadioButton) view).isChecked();
+//
+//            // Check which radio button was clicked
+//            switch(view.getId()) {
+//                case R.id.radio_pirates:
+//                    if (checked)
+//                        // Pirates are the best
+//                        break;
+//                case R.id.radio_ninjas:
+//                    if (checked)
+//                        // Ninjas rule
+//                        break;
+//            }
+//        }
+       String gender;
+        int checkedRadioButtonId = radioGroup1.getCheckedRadioButtonId();
+        if (checkedRadioButtonId == rBtnMale.getId()) {
+            gender = "male";
+        } else if (checkedRadioButtonId == rBtnFemale.getId()){
+            gender = "female";
+        } else {
+            gender = "others";
+        }
+        String bloodGroup;
+        int checkedRadioButtonId1 = radioGroup2.getCheckedRadioButtonId();
+        if (checkedRadioButtonId1 == rBtnAP.getId()) {
+            bloodGroup = "A+";
+        } if (checkedRadioButtonId1 == rBtnAN.getId()){
+            bloodGroup = "A-";
+        } if (checkedRadioButtonId1 == rBtnBP.getId()) {
+            bloodGroup = "B+";
+        }
+        if (checkedRadioButtonId1 == rBtnBN.getId()) {
+            bloodGroup = "B-";
+        }if (checkedRadioButtonId1 == rBtnABP.getId()) {
+            bloodGroup = "AB+";
+        }if (checkedRadioButtonId1 == rBtnABN.getId()) {
+            bloodGroup = "AB-";
+        }if (checkedRadioButtonId1 == rBtnOP.getId()) {
+            bloodGroup = "O+";
+        }if (checkedRadioButtonId1 == rBtnON.getId()) {
+            bloodGroup = "O-";
+        } else {
+            bloodGroup = "null";
+        }
 
         validationError = validateProfile();
 

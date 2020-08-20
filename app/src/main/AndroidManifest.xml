@@ -16,7 +16,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.ProfileActivity"></activity>
+        <activity android:name=".Activity.ContactUsActivity"></activity>
+        <activity android:name=".Activity.EmergencyActivity" />
+        <activity android:name=".Activity.DonationCampsActivity" />
+        <activity android:name=".Activity.BloodBankActivity" />
+        <activity android:name=".Activity.RequestBloodActivity" />
+        <activity android:name=".Activity.DonateBloodActivity" />
+        <activity android:name=".Activity.ProfileActivity" />
         <activity android:name=".sensors.AccelerometerActivity" />
         <activity android:name=".sensors.Fingerprint_Activity" />
         <activity android:name=".Activity.DashboardActivity" />

@@ -64,7 +64,8 @@
             android:text="Select Gender*"
             android:background="@drawable/style_edit_text"/>
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/radioGroup1"
+            android:checkedButton="@id/radioGroup1"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:layout_height="wrap_content">
@@ -117,7 +118,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:layout_marginBottom="20dp"
-            android:hint="Date of Birth/mm/dd/yy (Optional)"
+            android:hint="Date of Birth (MM/DD/YYYY)*"
             android:inputType="text"
             android:textSize="20sp"
             android:background="@drawable/style_edit_text"
@@ -215,7 +216,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:layout_marginBottom="20dp"
-            android:hint="Last Donation Date/mm/dd/yy (Optional)"
+            android:hint="Last Donation Date/MM/DD/YYYY(Opt)"
             android:textSize="20sp"
             android:background="@drawable/style_edit_text"
             />

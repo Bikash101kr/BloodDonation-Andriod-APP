@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/btnDonate"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="Donate Blood"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
 
-</FrameLayout>
+        />
+    <Button
+    android:id="@+id/btnRequest"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Request Blood"
+    android:layout_marginRight="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginBottom="25dp"
+    android:textColor="@color/white"
+    android:textSize="20sp"
+    android:background="@color/darkBlue"
+    android:padding="10dp"
+
+    />
+    <Button
+        android:id="@+id/btnBloodBank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blood Bank"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
+
+        />
+    <Button
+        android:id="@+id/btnCamps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blood Donation Camp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
+
+        />
+    <Button
+        android:id="@+id/btnEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emergency"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
+
+        />
+    <Button
+        android:id="@+id/btnContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact US"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
+
+        />
+
+</LinearLayout>
