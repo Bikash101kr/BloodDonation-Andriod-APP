@@ -10,12 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.servehumanity.Activity.BloodBankActivity;
+import com.example.servehumanity.Activity.ContactUsActivity;
+import com.example.servehumanity.Activity.DonateBloodActivity;
 import com.example.servehumanity.Activity.DonationCampsActivity;
 import com.example.servehumanity.Activity.EmergencyActivity;
+import com.example.servehumanity.Activity.RequestBloodActivity;
 import com.example.servehumanity.R;
 
 public class HomeFragment extends Fragment {
-    Button btnCamps, btnEmergency;
+    Button btnCamps, btnEmergency, btnContact, btnDonate, btnRequest, btnBloodBank;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -35,9 +39,34 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_home, container, false);
-
+        btnDonate = view.findViewById(R.id.btnDonate);
+        btnRequest = view.findViewById(R.id.btnRequest);
+        btnBloodBank = view.findViewById(R.id.btnBloodBank);
         btnCamps = view.findViewById(R.id.btnCamps);
         btnEmergency = view.findViewById(R.id.btnEmergency);
+        btnContact = view.findViewById(R.id.btnContact);
+
+        btnDonate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), DonateBloodActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), RequestBloodActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnBloodBank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), BloodBankActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnCamps.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +80,14 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), EmergencyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ContactUsActivity.class);
                 startActivity(intent);
             }
         });

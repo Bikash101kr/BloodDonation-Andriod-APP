@@ -15,7 +15,7 @@ public interface UserAPI {
 
     @FormUrlEncoded
     @POST("users/register")
-    Call<UserResponse>registerUser(@Body User user); //calling POST req, sending user in body.
+    Call<Void> register(@Field("email") String email, @Field("username") String username, @Field("password") String password, @Field("profile") String profile);
 
     @FormUrlEncoded
     @POST("users/login")

@@ -43,7 +43,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     EditText edtFirstName, edtLastName, edtAddress, edtPhone, edtDOB, edtLastDonation;
     Button btnUploadProfile, btnCreate;
     ImageView imgViewProfile;
-    RadioGroup radioGroup1, radioGroup2;
+    RadioGroup radioGroupGender, radioGroupBloodGroup;
     RadioButton rBtnMale, rBtnFemale, rBtnOthers;
     RadioButton rBtnAP, rBtnAN, rBtnBP,rBtnBN,rBtnABP, rBtnABN, rBtnOP,rBtnON;
     String imagePath, path, firstName, lastName, address, phone, lastDonation, dateOfBirth, gender, bloodGroup, profileId;
@@ -109,8 +109,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         btnCreate = findViewById(R.id.btnCreate);
         btnUploadProfile = findViewById(R.id.btnUploadProfile);
         imgViewProfile = findViewById(R.id.imgViewProfile);
-        radioGroup1 = findViewById(R.id.radioGroup1);
-        radioGroup2 = findViewById(R.id.radioGroup2);
+        radioGroupGender = findViewById(R.id.radioGroupGender);
+        radioGroupBloodGroup = findViewById(R.id.radioGroupBloodGroup);
         rBtnMale = findViewById(R.id.rBtnMale);
         rBtnFemale = findViewById(R.id.rBtnFemale);
         rBtnOthers = findViewById(R.id.rBtnOthers);
@@ -142,60 +142,41 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         dateOfBirth = edtDOB.getText().toString().trim();
         lastDonation = edtLastDonation.getText().toString().trim();
 
-//        public void onRadioButtonClicked(View view) {
-//            // Is the button now checked?
-//            boolean checked = ((RadioButton) view).isChecked();
-//
-//            // Check which radio button was clicked
-//            switch(view.getId()) {
-//                case R.id.radio_pirates:
-//                    if (checked)
-//                        // Pirates are the best
-//                        break;
-//                case R.id.radio_ninjas:
-//                    if (checked)
-//                        // Ninjas rule
-//                        break;
-//            }
-//        }
-       String gender;
-        int checkedRadioButtonId = radioGroup1.getCheckedRadioButtonId();
-        if (checkedRadioButtonId == rBtnMale.getId()) {
-            gender = "male";
-        } else if (checkedRadioButtonId == rBtnFemale.getId()){
-            gender = "female";
-        } else {
-            gender = "others";
-        }
-        String bloodGroup;
-        int checkedRadioButtonId1 = radioGroup2.getCheckedRadioButtonId();
-        if (checkedRadioButtonId1 == rBtnAP.getId()) {
-            bloodGroup = "A+";
-        } if (checkedRadioButtonId1 == rBtnAN.getId()){
-            bloodGroup = "A-";
-        } if (checkedRadioButtonId1 == rBtnBP.getId()) {
-            bloodGroup = "B+";
-        }
-        if (checkedRadioButtonId1 == rBtnBN.getId()) {
-            bloodGroup = "B-";
-        }if (checkedRadioButtonId1 == rBtnABP.getId()) {
-            bloodGroup = "AB+";
-        }if (checkedRadioButtonId1 == rBtnABN.getId()) {
-            bloodGroup = "AB-";
-        }if (checkedRadioButtonId1 == rBtnOP.getId()) {
-            bloodGroup = "O+";
-        }if (checkedRadioButtonId1 == rBtnON.getId()) {
-            bloodGroup = "O-";
-        } else {
-            bloodGroup = "null";
-        }
-
         validationError = validateProfile();
 
        if (validationError) return;
+        //getCheckedRadioButtonValue();
+        if (rBtnMale.isChecked()){
+            gender = "male";
+        } else if (rBtnFemale.isChecked()){
+            gender = "female";
+        } else if (rBtnOthers.isChecked()){
+            gender = "other";
+        }
+
+        if (rBtnAP.isChecked()){
+            bloodGroup = "A+";
+        }  else if (rBtnAP.isChecked()) {
+            bloodGroup = "A+";
+        } else if (rBtnAN.isChecked()){
+            bloodGroup = "A-";
+        }else if ( rBtnBP.isChecked()) {
+            bloodGroup = "B+";
+        }
+        else if ( rBtnBN.isChecked()) {
+            bloodGroup = "B-";
+        } else if ( rBtnABP.isChecked()) {
+            bloodGroup = "AB+";
+        }else if (rBtnABN.isChecked()) {
+            bloodGroup = "AB-";
+        }else if (rBtnOP.isChecked()) {
+            bloodGroup = "O+";
+        }else if (rBtnON.isChecked()) {
+            bloodGroup = "O-";
+        }
         ProfileAPI profileAPI = URL.getInstance().create(ProfileAPI.class);
 
-        Call<ProfileResponse> call = profileAPI.addProfile(firstName, lastName, address, phone, dateOfBirth, lastDonation, path, gender, bloodGroup);
+        Call<ProfileResponse> call = profileAPI.addProfile(firstName, lastName, address, phone, dateOfBirth, lastDonation, gender, bloodGroup, path);
         call.enqueue(new Callback<ProfileResponse>() {
             @Override
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
