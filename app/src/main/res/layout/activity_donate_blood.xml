@@ -1,9 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.DonateBloodActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tvDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please fill up all the fields!"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Full Address*"
+            android:textColor="#a52a2a"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <EditText
+            android:id="@+id/edtCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="Country"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+        <EditText
+            android:id="@+id/edtState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="State"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+        <EditText
+            android:id="@+id/edtDistrict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="District"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+        <EditText
+            android:id="@+id/edtCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="City"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+
+        <EditText
+            android:id="@+id/edtStreet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="Street"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+        <EditText
+            android:id="@+id/edtLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="Preferred place to Donate"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:inputType="text"
+            android:background="@drawable/style_edit_text"
+            />
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Current Body Weight(in Kg)"
+            android:textColor="#a52a2a"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <EditText
+            android:id="@+id/edtWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:hint="weight in KG"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginRight="20dp"
+            android:inputType="number"
+            android:background="@drawable/style_edit_text"
+            />
+        <Button
+            android:id="@+id/btnConfirmDonation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Donation "
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="30dp"
+            android:tag="Send Donation"
+            android:backgroundTint="@color/darkBlue"
+            />
+    </LinearLayout>
+
+</ScrollView>
