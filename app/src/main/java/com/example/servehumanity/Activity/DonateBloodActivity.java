@@ -5,6 +5,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.DonateBloodAPI;
+import com.example.servehumanity.fragments.HomeFragment;
 import com.example.servehumanity.response.DonateBloodResponse;
 
 import retrofit2.Call;
@@ -78,11 +80,15 @@ public class DonateBloodActivity extends AppCompatActivity {
                             return;
                         }
                         Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(DonateBloodActivity.this, HomeFragment.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
                         Toast.makeText(DonateBloodActivity.this, "Error: " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(DonateBloodActivity.this, DonateBloodActivity.class);
                     }
                 });
             }

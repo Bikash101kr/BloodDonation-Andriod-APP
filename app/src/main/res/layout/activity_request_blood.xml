@@ -5,7 +5,306 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.RequestBloodActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="10dp"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tvDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please fill up all the fields!"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"/>
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Patient Name*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+
+    <EditText
+        android:id="@+id/edtPatientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Patient Age*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Patient Full Address*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint="Full Address"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvHospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Patient Admit Hospital Name*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtHospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvBloodGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Required Blood Group*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+        />
+    <RadioGroup
+        android:id="@+id/radioGroupBloodGroup"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rBtnAP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="A+" />
+        <RadioButton
+            android:id="@+id/rBtnBP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="B+" />
+
+        <RadioButton
+            android:id="@+id/rBtnABP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="AB+" />
+
+        <RadioButton
+            android:id="@+id/rBtnOP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="O+" />
+        <RadioButton
+            android:id="@+id/rBtnAN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="A-" />
+
+        <RadioButton
+            android:id="@+id/rBtnBN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="B-" />
 
 
+
+        <RadioButton
+            android:id="@+id/rBtnABN"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="AB-" />
+
+
+
+        <RadioButton
+            android:id="@+id/rBtnON"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:text="O-" />
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/tvRequirementtype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Requirement Type*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+        />
+    <RadioGroup
+        android:id="@+id/radioGroupRequirementType"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rBtnFresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Fresh"/>
+        <RadioButton
+            android:id="@+id/rBtnStocked"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Stocked"/>
+        <RadioButton
+            android:id="@+id/rBtnOneOfAbove"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Any of above"/>
+    </RadioGroup>
+    <TextView
+        android:id="@+id/tvUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Need Unit*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Requirement Reason*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtReason"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvBefore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Required Before(full date and time)*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtBefore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_edit_text"
+        />
+    <Button
+        android:id="@+id/btnConfirmRequest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Request"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:layout_marginBottom="30dp"
+        android:tag="Send Donation"
+        android:backgroundTint="@color/darkBlue"
+        />
+</LinearLayout>
 
 </ScrollView>

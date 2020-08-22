@@ -2,6 +2,7 @@ package com.example.servehumanity.fragments;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -17,10 +18,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.servehumanity.Activity.BloodBankActivity;
+import com.example.servehumanity.Activity.LoginActivity;
+import com.example.servehumanity.Activity.MainActivity;
 import com.example.servehumanity.R;
 
 import java.util.ArrayList;
@@ -31,6 +37,7 @@ import static androidx.core.content.ContextCompat.getSystemService;
 public class SystemToolsFragment extends Fragment {
     LinearLayout linearLayout;
     ListView lstView;
+    TextView tvLogout;
 
     private SensorManager sensorManager;
     SharedPreferences sharedPreferences;
@@ -65,6 +72,15 @@ public class SystemToolsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_system_tools, container, false);
         linearLayout = view.findViewById(R.id.linearLayout);
         lstView = view.findViewById(R.id.lstView);
+        tvLogout = view.findViewById(R.id.tvLogOut);
+
+        tvLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         final ArrayAdapter arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1  , list);
         lstView.setAdapter(arrayAdapter);
