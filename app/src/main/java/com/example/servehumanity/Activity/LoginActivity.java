@@ -21,6 +21,7 @@ import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.UserAPI;
 import com.example.servehumanity.channel.CreateChannel;
+import com.example.servehumanity.fragments.HomeFragment;
 import com.example.servehumanity.response.UserResponse;
 import com.example.servehumanity.sensors.Fingerprint_Activity;
 
@@ -176,7 +177,7 @@ public class LoginActivity extends AppCompatActivity {
         tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent( LoginActivity.this, ProfileActivity.class));
             }
         });
 
