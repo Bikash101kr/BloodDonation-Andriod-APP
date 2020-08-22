@@ -18,21 +18,26 @@ public interface ProfileAPI {
                                      @Field("lastName") String lastName,
                                      @Field("address") String address,
                                      @Field("phone") String phone,
-                                     @Field("image") String image,
+                                     @Field("lastDonation" ) String lastDonation,
                                      @Field("dateOfBirth") String dateOfBirth,
                                      @Field("gender") String gender,
                                      @Field("bloodGroup") String bloodGroup,
-                                     @Field("lastDonation" ) String lastDonation);
+                                     @Field("image") String image);
+
+
     @GET("profiles")
     Call<Profile> display_profile(@Header("Authorization") String header);
 
     @FormUrlEncoded
     @PUT("profiles")
-    Call<Profile> update_profile(@Header("Authorization") String header, @Field("firstName") String firstName, @Field("lastName") String lastName,
-                                 @Field("address") String address, @Field("phone") String phone,
-                                 @Field("image") String image,
+    Call<Profile> update_profile(@Header("Authorization") String header,
+                                 @Field("firstName") String firstName,
+                                 @Field("lastName") String lastName,
+                                 @Field("address") String address,
+                                 @Field("phone") String phone,
+                                 @Field("lastDonation" ) String lastDonation,
                                  @Field("dateOfBirth") String dateOfBirth,
                                  @Field("gender") String gender,
                                  @Field("bloodGroup") String bloodGroup,
-                                 @Field("lastDonation" ) String lastDonation);
+                                 @Field("image") String image);
 }

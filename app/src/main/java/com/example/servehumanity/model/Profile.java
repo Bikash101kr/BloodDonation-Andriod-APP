@@ -1,7 +1,7 @@
 package com.example.servehumanity.model;
 
 public class Profile {
-    private  String firstName, lastName, phone, address, image, dateOfBirth, gender,bloodGroup, lastDonation;
+    private  String firstName, lastName, phone, address, dateOfBirth,  lastDonation, gender,bloodGroup, image;
 
     public Profile(String firstName, String lastName, String phone, String address, String image, String dateOfBirth, String gender, String bloodGroup, String lastDonation) {
         this.firstName = firstName;

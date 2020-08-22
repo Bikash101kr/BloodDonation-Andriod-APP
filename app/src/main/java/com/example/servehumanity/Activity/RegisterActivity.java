@@ -10,13 +10,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.servehumanity.R;
-import com.example.servehumanity.URL.URL;
+import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.UserAPI;
-import com.example.servehumanity.model.User;
-import com.example.servehumanity.response.UserResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -111,7 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
                             return;
                         }
                         Log.i("response", "success");
-                        Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                         startActivity(intent);
                     }
 

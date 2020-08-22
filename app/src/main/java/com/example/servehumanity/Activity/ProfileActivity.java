@@ -22,7 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.servehumanity.R;
-import com.example.servehumanity.URL.URL;
+import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.ImageAPI;
 import com.example.servehumanity.api.ProfileAPI;
 import com.example.servehumanity.bll.ImageBLL;
@@ -46,55 +46,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     RadioGroup radioGroupGender, radioGroupBloodGroup;
     RadioButton rBtnMale, rBtnFemale, rBtnOthers;
     RadioButton rBtnAP, rBtnAN, rBtnBP,rBtnBN,rBtnABP, rBtnABN, rBtnOP,rBtnON;
-    String imagePath, path, firstName, lastName, address, phone, lastDonation, dateOfBirth, gender, bloodGroup, profileId;
+    String imagePath, path, imageName, firstName, lastName, bloodGroup,address, phone, lastDonation, dateOfBirth, gender, profileId;
     AlertDialog.Builder builder;
     Boolean validationError;
 
     private final int CHOOSE_FROM_GALLERY = 0;
-    private boolean validateProfile() {
-        if (firstName.length() <= 0) {
-            edtFirstName.setError("Please enter first name");
-            edtFirstName.requestFocus();
-            return true;
-        }
-        edtFirstName.clearFocus();
-        edtFirstName.setError(null);
 
-        if (lastName.length() <= 0) {
-            edtLastName.setError("Please enter last name");
-            edtLastName.requestFocus();
-            return true;
-        }
-        edtLastName.clearFocus();
-        edtLastName.setError(null);
-
-        if (address.length() <= 0) {
-            edtAddress.setError("Please enter  address");
-            edtAddress.requestFocus();
-            return true;
-        }
-        edtAddress.clearFocus();
-        edtAddress.setError(null);
-
-        if (phone.length() <= 0) {
-            edtPhone.setError("Please enter phone number");
-            edtPhone.requestFocus();
-            return true;
-        }
-        edtPhone.clearFocus();
-        edtPhone.setError(null);
-
-        if (dateOfBirth.length() <= 0) {
-            edtDOB.setError("Please enter district");
-            edtDOB.requestFocus();
-            return true;
-        }
-        edtDOB.clearFocus();
-       edtDOB.setError(null);
-
-
-        return false;
-    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -176,7 +133,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         }
         ProfileAPI profileAPI = URL.getInstance().create(ProfileAPI.class);
 
-        Call<ProfileResponse> call = profileAPI.addProfile(firstName, lastName, address, phone, dateOfBirth, lastDonation, gender, bloodGroup, path);
+        Call<ProfileResponse> call = profileAPI.addProfile(firstName, lastName, address, phone, lastDonation,dateOfBirth, gender, bloodGroup, path);
         call.enqueue(new Callback<ProfileResponse>() {
             @Override
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
@@ -226,7 +183,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         final CharSequence[] options = { "Choose from Gallery","Cancel" };
         builder = new AlertDialog.Builder(ProfileActivity.this);
 
-        builder.setTitle("Add Profile Pic!")
+        builder.setTitle("Add Profile Picture!")
                 .setItems(options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -276,5 +233,48 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             imgViewProfile.setImageResource(R.drawable.profile);
         }
     }
+    private boolean validateProfile() {
+        if (firstName.length() <= 0) {
+            edtFirstName.setError("Please enter first name");
+            edtFirstName.requestFocus();
+            return true;
+        }
+        edtFirstName.clearFocus();
+        edtFirstName.setError(null);
 
+        if (lastName.length() <= 0) {
+            edtLastName.setError("Please enter last name");
+            edtLastName.requestFocus();
+            return true;
+        }
+        edtLastName.clearFocus();
+        edtLastName.setError(null);
+
+        if (address.length() <= 0) {
+            edtAddress.setError("Please enter  address");
+            edtAddress.requestFocus();
+            return true;
+        }
+        edtAddress.clearFocus();
+        edtAddress.setError(null);
+
+        if (phone.length() <= 0) {
+            edtPhone.setError("Please enter phone number");
+            edtPhone.requestFocus();
+            return true;
+        }
+        edtPhone.clearFocus();
+        edtPhone.setError(null);
+
+        if (dateOfBirth.length() <= 0) {
+            edtDOB.setError("Please enter district");
+            edtDOB.requestFocus();
+            return true;
+        }
+        edtDOB.clearFocus();
+        edtDOB.setError(null);
+
+
+        return false;
+    }
 }

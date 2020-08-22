@@ -18,7 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.example.servehumanity.R;
-import com.example.servehumanity.URL.URL;
+import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.UserAPI;
 import com.example.servehumanity.channel.CreateChannel;
 import com.example.servehumanity.response.UserResponse;
@@ -134,6 +134,7 @@ public class LoginActivity extends AppCompatActivity {
                             return;
                         }
                         URL.token = response.body().getToken();
+                        URL.userID = username;
 
                         SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
 
