@@ -19,15 +19,15 @@ import retrofit2.http.Path;
 public interface RequestBloodAPI {
 
     @GET("RequestBlood")
-    Call<List<RequestBlood>> display_requests();
+    Call<List<RequestBlood>> display_requests(@Header("Authorization") String header);
 
     @GET("RequestBlood/{request_id}")
-    Call<RequestBlood>display_request(@Path("request_id") String donation_id);
+    Call<RequestBlood>display_request(@Path("request_id") String donation_id,@Header("Authorization") String header);
 
 
     @FormUrlEncoded
     @POST("RequestBlood")
-    Call<Void>add_request(@Header("Authorization") String header,
+    Call<Void>add_request(
                            @Field("patientName") String patientName,
                            @Field("patientAge") String patientAge,
                            @Field("bloodGroup") String bloodGroup,
@@ -36,7 +36,8 @@ public interface RequestBloodAPI {
                            @Field("requirement") String requirement,
                            @Field("needUnit") String needUnit,
                           @Field("requirementReason") String requirementReason,
-                          @Field("requireBefore") String requireBefore);
+                          @Field("requireBefore") String requireBefore,
+                           @Header("Authorization") String header);
     @DELETE("RequestBlood/{Request_id}")
     Call<Void> delete_userRequest(@Path("request_id") String donation_id ,@Header("Authorization") String header);
 

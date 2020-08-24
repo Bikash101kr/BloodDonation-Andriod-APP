@@ -28,7 +28,6 @@ import static java.security.AccessController.getContext;
 
 public class DonateBloodActivity extends AppCompatActivity {
 
-    Boolean isDonateUpdated;
     TextView tvWeight, tvDesc, tvAddress;
     EditText edtCountry, edtState, edtDistrict, edtCity, edtStreet, edtLocation, edtWeight;
     Button btnConfirmDonation;
@@ -73,16 +72,16 @@ public class DonateBloodActivity extends AppCompatActivity {
 
 
                 call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                        if (!response.isSuccessful()) {
-                            Toast.makeText(DonateBloodActivity.this, "Error code: " + response.code(), Toast.LENGTH_SHORT).show();
-                            return;
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            if (!response.isSuccessful()) {
+                                Toast.makeText(DonateBloodActivity.this, "Error code: " + response.code(), Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(DonateBloodActivity.this, HomeFragment.class);
+                            startActivity(intent);
                         }
-                        Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(DonateBloodActivity.this, HomeFragment.class);
-                        startActivity(intent);
-                    }
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {

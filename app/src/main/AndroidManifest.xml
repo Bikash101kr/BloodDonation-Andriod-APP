@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.UpdateProfileActivity"></activity>
+        <activity android:name=".Activity.DisplayUserDonationActivity"></activity>
+        <activity android:name=".Activity.UpdateProfileActivity" />
         <activity android:name=".Activity.ContactUsActivity" />
         <activity android:name=".Activity.EmergencyActivity" />
         <activity android:name=".Activity.DonationCampsActivity" />

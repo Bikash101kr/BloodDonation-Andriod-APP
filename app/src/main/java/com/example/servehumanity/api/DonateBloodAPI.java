@@ -18,10 +18,10 @@ import retrofit2.http.Path;
 
 public interface DonateBloodAPI {
     @GET ("DonateBlood")
-    Call<List<DonateBlood>> display_donations();
+    Call<List<DonateBlood>> display_donations(@Header("Authorization") String header);
 
     @GET("DonateBlood/{donation_id}")
-    Call<DonateBlood>display_donation(@Path("donation_id") String donation_id);
+    Call<DonateBlood>display_donation(@Header("Authorization") String header,@Path("donation_id") String donation_id);
 
 
     @FormUrlEncoded
@@ -40,20 +40,21 @@ public interface DonateBloodAPI {
 
     @FormUrlEncoded
     @PUT("DonateBlood/{donation_id}")
-    Call<Profile> update_donation(@Header("Authorization") String header,
+    Call<DonateBlood> update_donation(@Header("Authorization") String header,
                                   @Field("country") String country,
                                   @Field("state") String state,
                                   @Field("district") String district,
                                   @Field("city") String city,
                                   @Field("street") String street,
                                   @Field("location") String location,
-                                  @Field("weight") String weight);
+                                  @Field("weight") String weight
+                                  );
 
     @FormUrlEncoded
     @PUT("DonateBlood/{donation_id}/status")
     Call<DonateBlood> update_donationStatus(@Header("Authorization") String header,
                                   @Field("status") String status);
     @GET("DonateBlood/{donation_id}/status")
-    Call<DonateBlood>display_donationStatus(@Path("status") String status);
+    Call<DonateBlood>display_donationStatus(@Header("Authorization") String header,@Path("status") String status);
 
 }
