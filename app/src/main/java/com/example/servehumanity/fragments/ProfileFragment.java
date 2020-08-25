@@ -2,9 +2,6 @@ package com.example.servehumanity.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +10,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.servehumanity.Activity.UpdateProfileActivity;
 import com.example.servehumanity.R;
@@ -27,7 +26,7 @@ import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
     TextView tvUserId, tvFirstName, tvLastName, tvGender, tvAddress, tvDOB, tvPhone, tvLastDonation, tvBloodGroup;
-    ImageView imageView;
+    ImageView imgView;
     Button btnUpdateProfile, btnViewDonation, btnViewRequest;
     Profile profile;
 
@@ -63,7 +62,7 @@ public class ProfileFragment extends Fragment {
         tvPhone = view.findViewById(R.id.tvPhone);
         tvLastDonation =view.findViewById(R.id.tvLastDonation);
         tvBloodGroup = view.findViewById(R.id.tvBloodGroup);
-        imageView = view.findViewById(R.id.imgView);
+        imgView = view.findViewById(R.id.imgView);
         btnUpdateProfile = view.findViewById(R.id.btnUpdateProfile);
         btnViewDonation = view.findViewById(R.id.btnViewDonation);
         btnViewRequest = view.findViewById(R.id.btnViewRequest);
@@ -121,7 +120,7 @@ public class ProfileFragment extends Fragment {
                     tvBloodGroup.setText(profile.getBloodGroup());
 
                     String imagePath = com.example.servehumanity.Url.URL.imgBase_url + "uploads/" + profile.getImage();
-                    imageView.setImageBitmap(ImageBLL.loadImageFromURL(imagePath));
+                    imgView.setImageBitmap(ImageBLL.loadImageFromURL(imagePath));
 
             }
 

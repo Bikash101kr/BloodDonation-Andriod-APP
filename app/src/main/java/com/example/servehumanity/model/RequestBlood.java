@@ -2,9 +2,9 @@ package com.example.servehumanity.model;
 
 public class RequestBlood {
 
-    private  String _id, patientName, patientAge, fullAddress, bloodGroup, hospitalName, requirement, needUnit, requirementReason, requiredBefore, user;
+    private  String _id, patientName, patientAge, fullAddress, bloodGroup, hospitalName, requirement, needUnit, requirementReason, requiredBefore, owner;
 
-    public RequestBlood(String _id, String patientName, String patientAge, String fullAddress, String bloodGroup, String hospitalName, String requirement, String needUnit, String requirementReason, String requiredBefore, String user) {
+    public RequestBlood(String _id, String patientName, String patientAge, String fullAddress, String bloodGroup, String hospitalName, String requirement, String needUnit, String requirementReason, String requiredBefore, String owner) {
         this._id = _id;
         this.patientName = patientName;
         this.patientAge = patientAge;
@@ -15,7 +15,7 @@ public class RequestBlood {
         this.needUnit = needUnit;
         this.requirementReason = requirementReason;
         this.requiredBefore = requiredBefore;
-        this.user = user;
+        this.owner = owner;
     }
 
     public String get_id() {
@@ -98,11 +98,11 @@ public class RequestBlood {
         this.requiredBefore = requiredBefore;
     }
 
-    public String getUser() {
-        return user;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 }

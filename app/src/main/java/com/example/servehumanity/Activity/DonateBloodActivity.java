@@ -1,10 +1,5 @@
 package com.example.servehumanity.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,17 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.DonateBloodAPI;
-import com.example.servehumanity.fragments.HomeFragment;
-import com.example.servehumanity.response.DonateBloodResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static java.security.AccessController.getContext;
 
 public class DonateBloodActivity extends AppCompatActivity {
 
@@ -32,7 +25,7 @@ public class DonateBloodActivity extends AppCompatActivity {
     EditText edtCountry, edtState, edtDistrict, edtCity, edtStreet, edtLocation, edtWeight;
     Button btnConfirmDonation;
     String country, state, district, city, street, location, weight, profile, user;
-
+    public static Boolean isUpdated = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +72,7 @@ public class DonateBloodActivity extends AppCompatActivity {
                                 return;
                             }
                             Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(DonateBloodActivity.this, HomeFragment.class);
-                            startActivity(intent);
+                            DonateBloodActivity.isUpdated= true;
                         }
 
                     @Override

@@ -1,7 +1,5 @@
 package com.example.servehumanity.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,17 +11,15 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
-import com.example.servehumanity.api.DonateBloodAPI;
 import com.example.servehumanity.api.RequestBloodAPI;
-import com.example.servehumanity.fragments.HomeFragment;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static com.example.servehumanity.R.id.edtPatientName;
 
 public class RequestBloodActivity extends AppCompatActivity {
     TextView tvDesc;
@@ -123,8 +119,7 @@ public class RequestBloodActivity extends AppCompatActivity {
                             return;
                         }
                         Toast.makeText(RequestBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RequestBloodActivity.this, HomeFragment.class);
-                        startActivity(intent);
+
                     }
 
 

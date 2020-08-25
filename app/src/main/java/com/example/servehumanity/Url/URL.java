@@ -8,7 +8,7 @@ public class URL {
     public static String userID = "";
     //--------- Connect from Emulator ----------
    // public static final String base_url = "http://10.0.2.2:3001/api/";
-   public static final String imgBase_url = "http://10.0.2.2:3001/";
+   public static final String imgBase_url = "http://192.168.100.5:3001/";
 
     public static final String base_url = "http://192.168.100.5:3001/api/";
     //--------- Connect from Mobile -------------

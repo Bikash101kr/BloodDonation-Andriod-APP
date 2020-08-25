@@ -36,8 +36,8 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void setUpIcons() {
-        tabLayout.getTabAt(0).setIcon(R.drawable.person_icon);
-        tabLayout.getTabAt(1).setIcon(R.drawable.home);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_account_box_24);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_home_svgrepo_com);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_wrench);
     }
 }
