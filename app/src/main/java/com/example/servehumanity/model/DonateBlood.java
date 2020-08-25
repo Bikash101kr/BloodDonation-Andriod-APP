@@ -1,9 +1,9 @@
 package com.example.servehumanity.model;
 
 public class DonateBlood {
-    private  String _id, country, state, district,city, street, location, weight, owner, profile;
+    private  String _id, country, state, district,city, street, location, weight, donationDate, owner, profile;
 
-    public DonateBlood(String _id, String country, String state, String district, String city, String street, String location, String weight, String owner, String profile) {
+    public DonateBlood(String _id, String country, String state, String district, String city, String street, String location, String weight, String donationDate, String owner, String profile) {
         this._id = _id;
         this.country = country;
         this.state = state;
@@ -12,6 +12,7 @@ public class DonateBlood {
         this.street = street;
         this.location = location;
         this.weight = weight;
+        this.donationDate = donationDate;
         this.owner = owner;
         this.profile = profile;
     }
@@ -78,6 +79,14 @@ public class DonateBlood {
 
     public void setWeight(String weight) {
         this.weight = weight;
+    }
+
+    public String getDonationDate() {
+        return donationDate;
+    }
+
+    public void setDonationDate(String donationDate) {
+        this.donationDate = donationDate;
     }
 
     public String getOwner() {

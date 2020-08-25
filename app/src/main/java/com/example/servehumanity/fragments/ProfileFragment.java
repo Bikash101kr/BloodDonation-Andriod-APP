@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.servehumanity.Activity.DisplayUserDonationActivity;
 import com.example.servehumanity.Activity.UpdateProfileActivity;
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
@@ -88,12 +89,12 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-//        btnViewUserBook.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getContext(), DisplayUserBook.class));
-//            }
-//        });
+        btnViewDonation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), DisplayUserDonationActivity.class));
+            }
+        });
         return view;
     }
 

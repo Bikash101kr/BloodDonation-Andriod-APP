@@ -1,8 +1,6 @@
 package com.example.servehumanity.api;
 
 import com.example.servehumanity.model.DonateBlood;
-import com.example.servehumanity.model.Profile;
-import com.example.servehumanity.response.DonateBloodResponse;
 
 import java.util.List;
 
@@ -20,8 +18,8 @@ public interface DonateBloodAPI {
     @GET ("DonateBlood")
     Call<List<DonateBlood>> display_donations(@Header("Authorization") String header);
 
-    @GET("DonateBlood/{donation_id}")
-    Call<DonateBlood>display_donation(@Header("Authorization") String header,@Path("donation_id") String donation_id);
+    @GET("DonateBlood")
+    Call<List<DonateBlood>> display_userDonation(@Header("Authorization") String header);
 
 
     @FormUrlEncoded
@@ -33,7 +31,8 @@ public interface DonateBloodAPI {
                                           @Field("city") String city,
                                           @Field("street") String street,
                                           @Field("location") String location,
-                                          @Field("weight") String weight
+                                          @Field("weight") String weight,
+                                          @Field("donationDate") String donationDate
                                           );
     @DELETE("DonateBlood/{donation_id}")
     Call<Void> delete_userDonation(@Path("donation_id") String donation_id ,@Header("Authorization") String header);
@@ -47,7 +46,8 @@ public interface DonateBloodAPI {
                                   @Field("city") String city,
                                   @Field("street") String street,
                                   @Field("location") String location,
-                                  @Field("weight") String weight
+                                  @Field("weight") String weight,
+                                      @Field("donationDate") String donationDate
                                   );
 
     @FormUrlEncoded

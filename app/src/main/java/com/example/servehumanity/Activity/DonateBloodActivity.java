@@ -20,10 +20,10 @@ import retrofit2.Response;
 
 public class DonateBloodActivity extends AppCompatActivity {
 
-    TextView tvWeight, tvDesc, tvAddress;
-    EditText edtCountry, edtState, edtDistrict, edtCity, edtStreet, edtLocation, edtWeight;
+    TextView tvWeight, tvDesc, tvAddress, tvDonationDate;
+    EditText edtCountry, edtState, edtDistrict, edtCity, edtStreet, edtLocation, edtWeight, edtDate;
     Button btnConfirmDonation;
-    String country, state, district, city, street, location, weight, profile, user;
+    String country, state, district, city, street, location, weight, donationDate, profile, user;
     public static Boolean isUpdated = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,7 @@ public class DonateBloodActivity extends AppCompatActivity {
         edtStreet = findViewById(R.id.edtStreet);
         edtLocation= findViewById(R.id.edtLocation);
         edtWeight = findViewById(R.id.edtWeight);
+        edtDate = findViewById(R.id.edtDate);
         btnConfirmDonation = findViewById(R.id.btnConfirmDonation);
 
         btnConfirmDonation.setOnClickListener(new View.OnClickListener() {
@@ -52,15 +53,17 @@ public class DonateBloodActivity extends AppCompatActivity {
                 street = edtStreet.getText().toString();
                 location = edtLocation.getText().toString();
                 weight = edtWeight.getText().toString();
+                donationDate = edtDate.getText().toString();
 
                 DonateBloodAPI donateBloodAPI = URL.getInstance().create(DonateBloodAPI.class);
-                Call<Void> call = donateBloodAPI.add_donation(URL.token, country, state, district,city, street, location, weight);
+                Call<Void> call = donateBloodAPI.add_donation(URL.token, country, state, district,city, street, location, weight, donationDate);
                 Log.i("country", country);
                 Log.i("state", state);
                 Log.i("district", district);
                 Log.i("city", city);
                 Log.i("street", street);
                 Log.i("weight", weight);
+                Log.i("donationDate", donationDate);
 
 
                 call.enqueue(new Callback<Void>() {
@@ -71,7 +74,7 @@ public class DonateBloodActivity extends AppCompatActivity {
                                 return;
                             }
                             Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
-                            //HomeFragment.isUpdated= true;
+                            DisplayUserDonationActivity.isDonateBloodUpdated= true;
                             finish();
                         }
 
