@@ -1,6 +1,5 @@
 package com.example.servehumanity.api;
 
-import com.example.servehumanity.model.DonateBlood;
 import com.example.servehumanity.model.Profile;
 import com.example.servehumanity.model.RequestBlood;
 
@@ -27,7 +26,7 @@ public interface RequestBloodAPI {
 
     @FormUrlEncoded
     @POST("RequestBlood")
-    Call<Void>add_request(
+    Call<Void>add_request(@Header("Authorization") String header,
                            @Field("patientName") String patientName,
                            @Field("patientAge") String patientAge,
                            @Field("bloodGroup") String bloodGroup,
@@ -36,8 +35,7 @@ public interface RequestBloodAPI {
                            @Field("requirement") String requirement,
                            @Field("needUnit") String needUnit,
                           @Field("requirementReason") String requirementReason,
-                          @Field("requireBefore") String requireBefore,
-                           @Header("Authorization") String header);
+                          @Field("requireBefore") String requireBefore);
     @DELETE("RequestBlood/{Request_id}")
     Call<Void> delete_userRequest(@Path("request_id") String donation_id ,@Header("Authorization") String header);
 

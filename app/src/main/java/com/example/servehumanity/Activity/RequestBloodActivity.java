@@ -1,6 +1,5 @@
 package com.example.servehumanity.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -118,7 +117,9 @@ public class RequestBloodActivity extends AppCompatActivity {
                             Toast.makeText(RequestBloodActivity.this, "Error code: " + response.code(), Toast.LENGTH_SHORT).show();
                             return;
                         }
-                        Toast.makeText(RequestBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RequestBloodActivity.this, "Success: Blood Request Added", Toast.LENGTH_SHORT).show();
+                        //HomeFragment.isUpdated= true;
+                        finish();
 
                     }
 
@@ -126,7 +127,6 @@ public class RequestBloodActivity extends AppCompatActivity {
                     public void onFailure(Call<Void> call, Throwable t) {
                         Toast.makeText(RequestBloodActivity.this, "Error: " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(RequestBloodActivity.this, DonateBloodActivity.class);
                     }
                 });
             }
