@@ -1,6 +1,7 @@
 package com.example.servehumanity.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.servehumanity.Activity.DonationDetailActivity;
 import com.example.servehumanity.R;
 import com.example.servehumanity.api.DonateBloodAPI;
 import com.example.servehumanity.model.DonateBlood;
@@ -40,21 +42,31 @@ public class RecyclerUserDonationAdapter extends RecyclerView.Adapter<RecyclerUs
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final DonateBloodViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final DonateBloodViewHolder holder, final int position) {
         final DonateBlood donateBlood = donateBloodList.get(position);
         holder.tvLocation.setText(donateBlood.getLocation());
         holder.tvDate.setText(donateBlood.getDonationDate());
 
-        final int pos = position;
+
 
         holder.imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                callAPI(donateBloodList.get(pos).get_id());
-                holder.constraintLayout.setVisibility(View.GONE);
+                callAPI(donateBloodList.get(position).get_id());
             }
         });
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DonationDetailActivity.class);
+                intent.putExtra("_id", donateBlood.get_id());
+                context.startActivity(intent);
+            }
+
+        });
     }
+
+
 
     private void callAPI(String id) {
         donateBloodList.clear();

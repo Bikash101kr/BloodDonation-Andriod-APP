@@ -19,7 +19,11 @@ public interface DonateBloodAPI {
     Call<List<DonateBlood>> display_donations(@Header("Authorization") String header);
 
     @GET("DonateBlood")
-    Call<List<DonateBlood>> display_userDonation(@Header("Authorization") String header);
+    Call<DonateBlood> display_userDonation(@Header ("Authorization") String header);
+
+    @GET("donateBloods/{donateBlood_id}")
+    Call<DonateBlood> display_donation(@Path ("donateBlood_id") String donateBlood_id);
+
 
 
     @FormUrlEncoded

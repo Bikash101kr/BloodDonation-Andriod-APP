@@ -86,7 +86,7 @@
                 android:id="@+id/imgDelete"
                 android:layout_width="16dp"
                 android:layout_height="26dp"
-                android:layout_marginStart="80dp"
+                android:layout_marginStart="0dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/delete_icon">
 

@@ -6,6 +6,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.servehumanity.R;
@@ -30,21 +31,25 @@ public class DisplayUserDonationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("onCreateView", "Created");
         setContentView(R.layout.activity_display_user_donation);
         rcView = findViewById(R.id.rcView);
+        rcView.setAdapter(recyclerAdapter);
+        rcView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         callAPI();
+        return;
     }
     private void callAPI() {
         donateBloodList.clear();
         final DonateBloodAPI donateBloodAPI = URL.getInstance().create(DonateBloodAPI.class);
 
-        Call<List<DonateBlood>> call = donateBloodAPI.display_userDonation(URL.token);
+        Call<List<DonateBlood>> call = donateBloodAPI.display_donations(URL.token);
 
         call.enqueue(new Callback<List<DonateBlood>>() {
             @Override
             public void onResponse(Call<List<DonateBlood>> call, Response<List<DonateBlood>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Unsuccessful!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DisplayUserDonationActivity.this, "Unsuccessful!", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -64,7 +69,7 @@ public class DisplayUserDonationActivity extends AppCompatActivity {
                     rcView.setAdapter(recyclerAdapter);
                     return;
                 }
-                Toast.makeText(getApplicationContext(), "There is no donation to display!", Toast.LENGTH_LONG).show();
+                Toast.makeText(DisplayUserDonationActivity.this, "There is no donation to display!", Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -74,5 +79,7 @@ public class DisplayUserDonationActivity extends AppCompatActivity {
             }
 
         });
+
     }
+
 }
