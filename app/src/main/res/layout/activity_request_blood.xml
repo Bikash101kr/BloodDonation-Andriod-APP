@@ -280,8 +280,31 @@
         android:layout_marginLeft="10dp"
 
         />
+
     <EditText
         android:id="@+id/edtBefore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:hint=""
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_edit_text"
+        />
+    <TextView
+        android:id="@+id/tvRequestDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Request Date(MM/DD/YYYY)*"
+        android:textColor="#a52a2a"
+        android:layout_marginLeft="10dp"
+
+        />
+    <EditText
+        android:id="@+id/edtRequestDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
