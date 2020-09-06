@@ -21,12 +21,11 @@ public interface DonateBloodAPI {
     @GET("DonateBlood")
     Call<DonateBlood> display_userDonation(@Header ("Authorization") String header);
 
-    @GET("donateBloods/{donateBlood_id}")
-    Call<DonateBlood> display_donation(@Path ("donateBlood_id") String donateBlood_id);
+    @GET("donateBlood/{donateBlood_id}")
+    Call<DonateBlood> display_donation(@Header ("Authorization") String header,@Path ("donateBlood_id") String donateBlood_id);
 
 
 
-    @FormUrlEncoded
     @POST("DonateBlood")
     Call<Void>add_donation(@Header("Authorization") String header,
                                           @Field("country") String country,

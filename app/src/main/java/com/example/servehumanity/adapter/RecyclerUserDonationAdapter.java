@@ -59,6 +59,7 @@ public class RecyclerUserDonationAdapter extends RecyclerView.Adapter<RecyclerUs
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DonationDetailActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtra("_id", donateBlood.get_id());
                 context.startActivity(intent);
             }

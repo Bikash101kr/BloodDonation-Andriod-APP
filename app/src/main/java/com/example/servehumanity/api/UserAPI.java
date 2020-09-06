@@ -20,7 +20,7 @@ public interface UserAPI {
     @POST("users/login")
     Call<UserResponse> checkUser(@Field("username")String username, @Field("password")String password);
 
-    @GET("users/{user_id")
+    @GET("users/{user_id}")
     Call<User> display_user(@Path("user_id") String user_id);
 }
 

@@ -1,10 +1,5 @@
 package com.example.servehumanity.sensors;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.biometric.BiometricPrompt;
-import androidx.core.content.ContextCompat;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.hardware.biometrics.BiometricManager;
@@ -12,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricPrompt;
+import androidx.core.content.ContextCompat;
 
 import com.example.servehumanity.Activity.DashboardActivity;
 import com.example.servehumanity.R;
@@ -29,7 +29,7 @@ public class Fingerprint_Activity extends AppCompatActivity {
         tvMsg = findViewById(R.id.tvMsg);
         btnLogin = findViewById(R.id.btnLogin);
 
-         androidx.biometric.BiometricManager biometricManager =  androidx.biometric.BiometricManager.from(this);
+        androidx.biometric.BiometricManager biometricManager =  androidx.biometric.BiometricManager.from(this);
          switch (biometricManager.canAuthenticate()){
              case BiometricManager.BIOMETRIC_SUCCESS:
                  tvMsg.setText("You can you finger print to login!");

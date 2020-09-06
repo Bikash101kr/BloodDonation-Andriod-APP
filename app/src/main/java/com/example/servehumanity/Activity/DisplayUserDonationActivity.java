@@ -27,6 +27,7 @@ public class DisplayUserDonationActivity extends AppCompatActivity {
     List<DonateBlood> donateBloodList = new ArrayList<>();
     List<DonateBlood> donateBloodListFromAPI;
     RecyclerUserDonationAdapter recyclerAdapter;
+    Boolean hasStarted = false;
     public static Boolean isDonateBloodUpdated = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

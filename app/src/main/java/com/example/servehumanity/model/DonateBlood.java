@@ -3,7 +3,9 @@ package com.example.servehumanity.model;
 public class DonateBlood {
     private  String _id, country, state, district,city, street, location, weight, donationDate, owner, profile;
 
-    public DonateBlood(String _id, String country, String state, String district, String city, String street, String location, String weight, String donationDate, String owner, String profile) {
+    public DonateBlood(String _id, String country, String state, String district, String city,
+                       String street, String location, String weight, String donationDate, String owner,
+                       String profile) {
         this._id = _id;
         this.country = country;
         this.state = state;
