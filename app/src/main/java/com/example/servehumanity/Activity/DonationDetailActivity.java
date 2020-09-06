@@ -1,7 +1,9 @@
 package com.example.servehumanity.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,22 +13,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.DonateBloodAPI;
-import com.example.servehumanity.api.UserAPI;
 import com.example.servehumanity.model.DonateBlood;
 import com.example.servehumanity.model.Profile;
-import com.example.servehumanity.model.User;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DonationDetailActivity extends AppCompatActivity {
+    public static Boolean isUpdated = false;
     TextView tvUserId, tvFirstName, tvLastName, tvGender, tvAddress, tvDOB, tvPhone, tvLastDonation, tvBloodGroup;
     TextView tvCountry, tvState, tvStreet, tvDistrict, tvCity, tvWeight, tvDate, tvLocation;
     Profile profile;
 
     Button btnUpdateDonation;
-
+    public static Boolean isDonateBloodUpdated = false;
 
     String donateBlood_id;
 
@@ -56,6 +57,13 @@ public class DonationDetailActivity extends AppCompatActivity {
         donateBlood_id = getIntent().getStringExtra("_id");
         loadDonationDetail();
 
+        btnUpdateDonation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DonationDetailActivity.this, UpdateDonationActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadDonationDetail() {
@@ -80,7 +88,6 @@ public class DonationDetailActivity extends AppCompatActivity {
                 tvLocation.setText(donateBloodFromAPI.getLocation());
                 Log.i("owner", donateBloodFromAPI.getOwner());
 
-                loadProfile(donateBloodFromAPI.getOwner());
 
 
             }
@@ -92,64 +99,10 @@ public class DonationDetailActivity extends AppCompatActivity {
         });
     }
 
-    private void loadProfile(String user_id) {
-        UserAPI userAPI = URL.getInstance().create(UserAPI.class);
-        Call<User> call = userAPI.display_user(user_id);
-        call.enqueue(new Callback<User>() {
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (!response.isSuccessful()) {
-                    Toast.makeText(DonationDetailActivity.this, "Unsuccessful!", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                User user = response.body();
-                //tvUserId.setText(URL.userID);
-                tvFirstName.setText(user.getProfile().getFirstName());
-                tvLastName.setText(user.getProfile().getLastName());
-                tvDOB.setText(user.getProfile().getDateOfBirth());
-                tvAddress.setText(user.getProfile().getAddress());
-                tvPhone.setText(user.getProfile().getPhone());
-                tvLastDonation.setText(user.getProfile().getLastDonation());
-                tvGender.setText(user.getProfile().getGender());
-                tvBloodGroup.setText(user.getProfile().getBloodGroup());
-            }
-
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-                Log.i("onFailure", t.getLocalizedMessage());
-            }
 
 
-//            private void loadProfile() {
-//                ProfileAPI profileAPI = URL.getInstance().create(ProfileAPI.class);
-//                Call<Profile> call = profileAPI.display_profile(URL.token);
-//                call.enqueue(new Callback<Profile>() {
-//                    @Override
-//                    public void onResponse(Call<Profile> call, Response<Profile> response) {
-//                        if (!response.isSuccessful()) {
-//                            Toast.makeText(DonationDetailActivity.this, "Unsuccessful!", Toast.LENGTH_LONG).show();
-//                            return;
-//                        }
-//
-//                        profile = response.body();
-//                        tvUserId.setText(URL.userID);
-//                        tvFirstName.setText(profile.getFirstName());
-//                        tvLastName.setText(profile.getLastName());
-//                        tvDOB.setText(profile.getDateOfBirth());
-//                        tvAddress.setText(profile.getAddress());
-//                        tvPhone.setText(profile.getPhone());
-//                        tvLastDonation.setText(profile.getLastDonation());
-//                        tvGender.setText(profile.getGender());
-//                        tvBloodGroup.setText(profile.getBloodGroup());
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Profile> call, Throwable t) {
-//                        Log.i("onFailure", t.getLocalizedMessage());
-//
-//                    }
 
 
-                });
-            }
+
+
         }

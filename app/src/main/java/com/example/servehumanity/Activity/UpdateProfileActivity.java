@@ -1,11 +1,5 @@
 package com.example.servehumanity.Activity;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,6 +16,12 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.example.servehumanity.R;
 import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.ImageAPI;
@@ -30,7 +30,6 @@ import com.example.servehumanity.bll.ImageBLL;
 import com.example.servehumanity.fragments.ProfileFragment;
 import com.example.servehumanity.model.Profile;
 import com.example.servehumanity.response.ImageResponse;
-import com.example.servehumanity.response.ProfileResponse;
 
 import java.io.File;
 
@@ -283,70 +282,6 @@ public class UpdateProfileActivity extends AppCompatActivity implements View.OnC
 
         return false;
     }
-
-//        btnCreate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                firstName = edtFirstName.getText().toString().trim();
-//                lastName = edtLastName.getText().toString().trim();
-//                address = edtAddress.getText().toString().trim();
-//                phone = edtPhone.getText().toString().trim();
-//                dateOfBirth = edtDOB.getText().toString().trim();
-//                lastDonation = edtLastDonation.getText().toString().trim();
-//
-//
-//                //if (validationError) return;
-//                //getCheckedRadioButtonValue();
-//                if (rBtnMale.isChecked()){
-//                    gender = "male";
-//                } else if (rBtnFemale.isChecked()){
-//                    gender = "female";
-//                } else if (rBtnOthers.isChecked()){
-//                    gender = "other";
-//                }
-//
-//                if (rBtnAP.isChecked()){
-//                    bloodGroup = "A+";
-//                }  else if (rBtnAP.isChecked()) {
-//                    bloodGroup = "A+";
-//                } else if (rBtnAN.isChecked()){
-//                    bloodGroup = "A-";
-//                }else if ( rBtnBP.isChecked()) {
-//                    bloodGroup = "B+";
-//                }
-//                else if ( rBtnBN.isChecked()) {
-//                    bloodGroup = "B-";
-//                } else if ( rBtnABP.isChecked()) {
-//                    bloodGroup = "AB+";
-//                }else if (rBtnABN.isChecked()) {
-//                    bloodGroup = "AB-";
-//                }else if (rBtnOP.isChecked()) {
-//                    bloodGroup = "O+";
-//                }else if (rBtnON.isChecked()) {
-//                    bloodGroup = "O-";
-//                }
-//                ProfileAPI profileAPI = URL.getInstance().create(ProfileAPI.class);
-//                Call<Profile> call = profileAPI.update_profile(URL.token ,firstName, lastName, address, phone, lastDonation,dateOfBirth, gender, bloodGroup, path);
-//                call.enqueue(new Callback<Profile>() {
-//                    @Override
-//                    public void onResponse(Call<Profile> call, Response<Profile> response) {
-//                        if (!response.isSuccessful()) {
-//                            Log.i("response", "unsuccessful");
-//                            return;
-//                        }
-//                        ProfileFragment.isUpdated = true;
-//                        finish();
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<Profile> call, Throwable t) {
-//                        Log.i("Fail", t.getLocalizedMessage());
-//                    }
-//                });
-//            }
-//        });
-//    }
-
 
     private void getIntentValue() {
         firstName = getIntent().getStringExtra("firstName");

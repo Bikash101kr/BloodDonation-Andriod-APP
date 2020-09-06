@@ -42,7 +42,7 @@ public interface DonateBloodAPI {
 
     @FormUrlEncoded
     @PUT("DonateBlood/{donation_id}")
-    Call<DonateBlood> update_donation(@Header("Authorization") String header,
+    Call<Void> update_donation(@Header("Authorization") String header,
                                   @Field("country") String country,
                                   @Field("state") String state,
                                   @Field("district") String district,
