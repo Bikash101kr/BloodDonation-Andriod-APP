@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textSize="12sp"
+        android:inputType="text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+
+        />
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textSize="12sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#023e8a"
+        android:text="Login"
+        android:textColor="#fff"
+        android:textSize="12sp" />
+</LinearLayout>
