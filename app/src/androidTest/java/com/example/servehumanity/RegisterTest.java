@@ -13,20 +13,18 @@ import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class MainActivityTest {
+public class RegisterTest {
     @Rule
     public ActivityTestRule<MainActivity> testRule =
             new ActivityTestRule<>(MainActivity.class);
     @Test
     public  void TestUI() throws  Exception{
-        onView(withId(R.id.btnSignIN)).perform(click());
-        //onView(withId(R.id.btnRegister)).perform(click());
+        onView(withId(R.id.btnRegister)).perform(click());
+
 
 
 
     }
-
 }

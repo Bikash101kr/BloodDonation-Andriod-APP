@@ -72,6 +72,7 @@
                 android:id="@+id/rBtnMale"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:checked="true"
                 android:text="Male"/>
             <RadioButton
                 android:id="@+id/rBtnFemale"
@@ -145,6 +146,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:maxLines="1"
+                    android:checked="true"
                     android:text="A+" />
                 <RadioButton
                     android:id="@+id/rBtnBP"
