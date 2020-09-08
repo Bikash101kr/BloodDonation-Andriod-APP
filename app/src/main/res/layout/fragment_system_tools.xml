@@ -6,24 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_gravity="center"
     tools:context=".fragments.SystemToolsFragment">
+
     <ListView
         android:id="@+id/lstView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
+        android:layout_margin="10dp" />
+
     <TextView
         android:id="@+id/tvLogOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log Out"
         android:textSize="20sp"
+        android:layout_marginTop="10dp"
         android:textStyle="normal"
         android:textColor="#0000ff"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         />
 </LinearLayout>
