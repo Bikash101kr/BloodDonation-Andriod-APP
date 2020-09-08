@@ -14,6 +14,8 @@ import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
@@ -43,7 +45,7 @@ public class ProfileActivityTest {
 
         onView(withId(R.id.btnCreate)).perform(click());
 
-        onView(withId(R.id.edtUsername));
+        onView(withId(R.id.edtUsername)).check(matches(isDisplayed()));
 
     }
 
