@@ -32,11 +32,11 @@ public class ImageBLL {
         return result;
     }
 
-    public static void previewImage(String imagePath, ImageView imgView) {
+    public static void previewImage(String imagePath, ImageView imageView) {
         File imgFile = new File(imagePath);
         if (imgFile.exists()) {
             Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            imgView.setImageBitmap(myBitmap);
+            imageView.setImageBitmap(myBitmap);
         } else {
             Log.i("PreviewImage", "PreviewImageError");
         }
