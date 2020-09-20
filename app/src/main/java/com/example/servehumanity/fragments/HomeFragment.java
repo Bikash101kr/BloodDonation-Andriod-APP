@@ -9,12 +9,12 @@ import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
 
-import com.example.servehumanity.Activity.BloodBankActivity;
 import com.example.servehumanity.Activity.ContactUsActivity;
 import com.example.servehumanity.Activity.DonateBloodActivity;
 import com.example.servehumanity.Activity.DonationCampsActivity;
 import com.example.servehumanity.Activity.EmergencyActivity;
 import com.example.servehumanity.Activity.RequestBloodActivity;
+import com.example.servehumanity.Map.MapsActivity;
 import com.example.servehumanity.R;
 
 public class HomeFragment extends Fragment {
@@ -40,7 +40,6 @@ public class HomeFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_home, container, false);
         btnDonate = view.findViewById(R.id.btnDonate);
         btnRequest = view.findViewById(R.id.btnRequest);
-        btnBloodBank = view.findViewById(R.id.btnBloodBank);
         btnCamps = view.findViewById(R.id.btnCamps);
         btnEmergency = view.findViewById(R.id.btnEmergency);
         btnContact = view.findViewById(R.id.btnContact);
@@ -62,7 +61,7 @@ public class HomeFragment extends Fragment {
         btnBloodBank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), BloodBankActivity.class);
+                Intent intent = new Intent(getContext(), MapsActivity.class);
                 startActivity(intent);
             }
         });
