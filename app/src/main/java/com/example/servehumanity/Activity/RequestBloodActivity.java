@@ -1,7 +1,6 @@
 package com.example.servehumanity.Activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -102,16 +101,16 @@ public class RequestBloodActivity extends AppCompatActivity {
 
                 RequestBloodAPI requestBloodAPI = URL.getInstance().create(RequestBloodAPI.class);
                 Call<Void> call = requestBloodAPI.add_request(URL.token, patientName, patientAge, bloodGroup, hospitalName, fullAddress, requirement, needUnit,requirementReason, requireBefore, requestDate);
-                Log.i("patientName", patientName);
-                Log.i("patientAge", patientAge);
-                Log.i("bloodGroup",bloodGroup);
-                Log.i("hospitalName", hospitalName);
-                Log.i("fullAddress", fullAddress);
-                Log.i("requirement",requirement);
-                Log.i("needUnit",needUnit);
-                Log.i("requirementReason",requirementReason);
-                Log.i("requireBefore",requireBefore);
-                Log.i("requestDate",requestDate);
+//                Log.i("patientName", patientName);
+//                Log.i("patientAge", patientAge);
+//                Log.i("bloodGroup",bloodGroup);
+//                Log.i("hospitalName", hospitalName);
+//                Log.i("fullAddress", fullAddress);
+//                Log.i("requirement",requirement);
+//                Log.i("needUnit",needUnit);
+//                Log.i("requirementReason",requirementReason);
+//                Log.i("requireBefore",requireBefore);
+//                Log.i("requestDate",requestDate);
 
                 call.enqueue(new Callback<Void>() {
                     @Override

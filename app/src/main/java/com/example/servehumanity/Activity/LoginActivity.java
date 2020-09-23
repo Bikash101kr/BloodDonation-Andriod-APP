@@ -139,8 +139,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
 
-
-
                         if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
                             startActivity(new Intent(LoginActivity.this, Fingerprint_Activity.class));
                         } else {

@@ -1,5 +1,6 @@
 package com.example.servehumanity.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,14 +15,14 @@ import com.example.servehumanity.Activity.DonateBloodActivity;
 import com.example.servehumanity.Activity.DonationCampsActivity;
 import com.example.servehumanity.Activity.EmergencyActivity;
 import com.example.servehumanity.Activity.RequestBloodActivity;
-import com.example.servehumanity.Map.MapsActivity;
 import com.example.servehumanity.R;
 
 public class HomeFragment extends Fragment {
     Button btnCamps, btnEmergency, btnContact, btnDonate, btnRequest, btnBloodBank;
     public static Boolean isUpdated = false;
+    Context context;
     public HomeFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -58,13 +59,14 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-        btnBloodBank.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), MapsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnBloodBank.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                Intent myIntent = new Intent(context, MapsActivity.class);
+//                getActivity().startActivity(myIntent);
+//            }
+//        });
 
         btnCamps.setOnClickListener(new View.OnClickListener() {
             @Override

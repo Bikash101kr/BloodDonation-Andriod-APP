@@ -35,8 +35,7 @@ public interface DonateBloodAPI {
                                           @Field("street") String street,
                                           @Field("location") String location,
                                           @Field("weight") String weight,
-                                          @Field("donationDate") String donationDate
-                                          );
+                                          @Field("donationDate") String donationDate);
     @DELETE("DonateBlood/{donation_id}")
     Call<Void> delete_userDonation(@Path("donation_id") String donation_id ,@Header("Authorization") String header);
 

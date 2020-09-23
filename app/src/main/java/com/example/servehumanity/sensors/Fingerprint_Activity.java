@@ -32,7 +32,7 @@ public class Fingerprint_Activity extends AppCompatActivity {
         androidx.biometric.BiometricManager biometricManager =  androidx.biometric.BiometricManager.from(this);
          switch (biometricManager.canAuthenticate()){
              case BiometricManager.BIOMETRIC_SUCCESS:
-                 tvMsg.setText("You can you finger print to login!");
+                 tvMsg.setText("You can use finger print to login!");
                  tvMsg.setTextColor(Color.parseColor("#fafafa"));
                  break;
              case BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE:

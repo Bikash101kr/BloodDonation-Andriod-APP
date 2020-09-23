@@ -74,7 +74,7 @@ public class DonateBloodActivity extends AppCompatActivity {
                                 return;
                             }
                             Toast.makeText(DonateBloodActivity.this, "Success: Donation Added", Toast.LENGTH_SHORT).show();
-                            DisplayUserDonationActivity.isDonateBloodUpdated= true;
+                           // DisplayUserDonationActivity.isDonateBloodUpdated= true;
                             finish();
                         }
 
