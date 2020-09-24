@@ -15,6 +15,7 @@ import com.example.servehumanity.Activity.DonateBloodActivity;
 import com.example.servehumanity.Activity.DonationCampsActivity;
 import com.example.servehumanity.Activity.EmergencyActivity;
 import com.example.servehumanity.Activity.RequestBloodActivity;
+import com.example.servehumanity.Map.MapsActivity;
 import com.example.servehumanity.R;
 
 public class HomeFragment extends Fragment {
@@ -44,6 +45,7 @@ public class HomeFragment extends Fragment {
         btnCamps = view.findViewById(R.id.btnCamps);
         btnEmergency = view.findViewById(R.id.btnEmergency);
         btnContact = view.findViewById(R.id.btnContact);
+        btnBloodBank = view.findViewById(R.id.btnBloodBank);
 
         btnDonate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,14 +61,14 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
-//        btnBloodBank.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View v) {
-//                Intent myIntent = new Intent(context, MapsActivity.class);
-//                getActivity().startActivity(myIntent);
-//            }
-//        });
+        btnBloodBank.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), MapsActivity.class));
+
+            }
+        });
 
         btnCamps.setOnClickListener(new View.OnClickListener() {
             @Override

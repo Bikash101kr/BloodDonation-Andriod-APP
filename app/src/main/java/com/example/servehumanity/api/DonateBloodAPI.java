@@ -25,7 +25,7 @@ public interface DonateBloodAPI {
     Call<DonateBlood> display_donation(@Header ("Authorization") String header,@Path ("donateBlood_id") String donateBlood_id);
 
 
-
+    @FormUrlEncoded
     @POST("DonateBlood")
     Call<Void>add_donation(@Header("Authorization") String header,
                                           @Field("country") String country,
