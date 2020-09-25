@@ -30,7 +30,7 @@ public class UserBLLTest {
 
     @Test
     public void checkUserRegister() {
-        UserBLL userBLL = new UserBLL("Bikash2", "password", "bikash33@gmail.com", Id);
+        UserBLL userBLL = new UserBLL("Bikash6", "password", "bikash33@gmail.com", Id);
         boolean res = userBLL.registerUser();
         assertEquals(true, res);
     }
