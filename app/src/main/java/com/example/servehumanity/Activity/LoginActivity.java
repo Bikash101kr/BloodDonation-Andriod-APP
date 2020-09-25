@@ -139,15 +139,15 @@ public class LoginActivity extends AppCompatActivity {
                         displayNotificationSuccess();
                         finish();
 
-//                        SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
-//
-//                        if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
-//                            startActivity(new Intent(LoginActivity.this, Fingerprint_Activity.class));
-//                        } else {
-//                           startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-//                        }
-//                        displayNotificationSuccess();
-//                        finish();
+                        SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
+
+                        if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
+                            startActivity(new Intent(LoginActivity.this, Fingerprint_Activity.class));
+                        } else {
+                           startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                        }
+                        displayNotificationSuccess();
+                        finish();
                     }
 
                     @Override

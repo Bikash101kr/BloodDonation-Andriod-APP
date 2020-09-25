@@ -79,7 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void setArrayandAdapter(){
 
         list.add(new Map(27.7134373,85.3221442,"Kathmandu Serve Humanity"));
-        list.add(new Map(25.444253, 77.659933,"Chitwan Serve Humanity"));
+        list.add(new Map(27.650110, 84.551318,"Chitwan Serve Humanity"));
         list.add(new Map(26.460199, 87.280342," Biratnagar Serve Humanity"));
         list.add(new Map(28.237988, 83.995590,"Pokhara Serve Humanity"));
         list.add(new Map(28.063919, 81.619583,"Nepalganj Humanity"));
