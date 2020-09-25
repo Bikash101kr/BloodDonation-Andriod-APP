@@ -11,30 +11,30 @@ import java.util.List;
 
 public class FragmentAdapter extends FragmentPagerAdapter {
 
-    private List<Fragment> fr = new ArrayList<>();
-    private  List<String> fragTitle = new ArrayList<>();
-    public FragmentAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
-    }
+  private List<Fragment> fr = new ArrayList<>();
+  private  List<String> fragTitle = new ArrayList<>();
+  public FragmentAdapter(@NonNull FragmentManager fm, int behavior) {
+    super(fm, behavior);
+  }
 
-    @NonNull
-    @Override
-    public Fragment getItem(int position) {
-        return fr.get(position);
-    }
+  @NonNull
+  @Override
+  public Fragment getItem(int position) {
+    return fr.get(position);
+  }
 
-    @Override
-    public int getCount() {
-        return fr.size();
-    }
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return fragTitle.get(position);
-    }
+  @Override
+  public int getCount() {
+    return fr.size();
+  }
+  @Nullable
+  @Override
+  public CharSequence getPageTitle(int position) {
+    return fragTitle.get(position);
+  }
 
-    public void addFragment(Fragment fragment, String title) {
-        fr.add(fragment);
-        fragTitle.add(title);
-    }
+  public void addFragment(Fragment fragment, String title) {
+    fr.add(fragment);
+    fragTitle.add(title);
+  }
 }
