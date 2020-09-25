@@ -23,19 +23,19 @@
 
         />
     <Button
-    android:id="@+id/btnRequest"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Request Blood"
-    android:layout_marginRight="40dp"
-    android:layout_marginLeft="40dp"
-    android:layout_marginBottom="25dp"
-    android:textColor="@color/white"
-    android:textSize="20sp"
-    android:background="@color/darkBlue"
-    android:padding="10dp"
+        android:id="@+id/btnRequest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request Blood"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="25dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/darkBlue"
+        android:padding="10dp"
 
-    />
+        />
     <Button
         android:id="@+id/btnBloodBank"
         android:layout_width="match_parent"

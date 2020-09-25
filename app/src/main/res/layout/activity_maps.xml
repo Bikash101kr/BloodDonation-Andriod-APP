@@ -11,15 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:hint="serch text"
-        android:layout_margin="20dp"/>
+        android:hint="Type City Name"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Search"
         android:textSize="20sp"
-        android:layout_margin="20dp"/>
+        android:layout_margin="10dp"/>
 
 
     <fragment

@@ -1,29 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".sensors.AccelerometerActivity">
-    <TextView
-        android:id="@+id/tvSensor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="@color/darkBlue"
-        android:text="Sensor Name"
-        />
-    <TextView
-        android:id="@+id/tvValue"
-        android:layout_marginTop="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:text="Value"
-        />
-
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"    android:orientation="vertical"    android:layout_height="match_parent"    android:gravity="center"    tools:context=".sensors.AccelerometerActivity">    <TextView        android:id="@+id/tvSensor"        android:layout_width="match_parent"        android:layout_height="wrap_content"        android:gravity="center"        android:textSize="40sp"        android:textColor="@color/darkBlue"        android:text="Sensor Name"        />    <TextView        android:id="@+id/tvValue"        android:layout_marginTop="30dp"        android:layout_width="match_parent"        android:layout_height="wrap_content"        android:gravity="center"        android:textSize="40sp"        android:text="Value"        /></LinearLayout>

@@ -11,78 +11,78 @@
     android:gravity="center_horizontal"
     tools:context=".Activity.LoginActivity">
 
-    <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logo"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
+  <ImageView
+      android:layout_width="150dp"
+      android:layout_height="150dp"
+      android:src="@drawable/logo"
+      android:layout_gravity="center"
+      android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/edtUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:hint="Username"
-        android:textSize="20sp"
-        android:inputType="text"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/ic_baseline_account_circle_24"
-    />
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:textSize="20sp"
-        android:inputType="textPassword"
-        android:layout_margin="30dp"
-        android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"/>
-    <CheckBox
-        android:id="@+id/checkbox1"
-        android:layout_marginBottom="20px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        android:text="Remember Me" />
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:background="#023e8a"
-        android:textSize="20sp"
-        android:layout_margin="30dp"
-        android:textColor="#fff"/>
+  <EditText
+      android:id="@+id/edtUsername"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:hint="Username"
+      android:textSize="20sp"
+      android:inputType="text"
+      android:layout_marginLeft="30dp"
+      android:layout_marginRight="30dp"
+      android:drawablePadding="10dp"
+      android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+      />
+  <EditText
+      android:id="@+id/edtPassword"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:hint="Password"
+      android:textSize="20sp"
+      android:inputType="textPassword"
+      android:layout_margin="30dp"
+      android:drawablePadding="10dp"
+      android:drawableLeft="@drawable/ic_baseline_lock_24"/>
+  <CheckBox
+      android:id="@+id/checkbox1"
+      android:layout_marginBottom="20px"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textSize="20sp"
+      android:layout_marginRight="30dp"
+      android:layout_marginLeft="30dp"
+      android:text="Remember Me" />
+  <Button
+      android:id="@+id/btnLogin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Login"
+      android:background="#023e8a"
+      android:textSize="20sp"
+      android:layout_margin="30dp"
+      android:textColor="#fff"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New User?"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:textColor="#023e8a"/>
-        <TextView
-            android:id="@+id/tvRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click here to register!"
-            android:textStyle="italic"
-            android:textSize="20sp"
-            android:layout_margin="20dp"
-            android:textColor="#03045e"
-            />
-    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New User?"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#023e8a"/>
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click here to register!"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:layout_margin="20dp"
+        android:textColor="#03045e"
+        />
+  </LinearLayout>
 
 </LinearLayout>

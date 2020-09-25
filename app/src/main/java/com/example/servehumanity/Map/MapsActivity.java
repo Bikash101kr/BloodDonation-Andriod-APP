@@ -39,7 +39,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -70,29 +69,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng ServeHumanity = new LatLng(27.7134373,85.3221442);
+        mMap.addMarker(new MarkerOptions().position(ServeHumanity).title("Head Office serve Humanity"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ServeHumanity));
     }
     private void setArrayandAdapter(){
 
-        list.add(new Map(27.7134373,85.3221442,"Naag Pokhari"));
-        list.add(new Map(27.7138699,85.3157503,"Naryanhiti palace"));
-        list.add(new Map(27.6980136,85.3217048,"Singha Durbar"));
+        list.add(new Map(27.7134373,85.3221442,"Kathmandu Serve Humanity"));
+        list.add(new Map(25.444253, 77.659933,"Chitwan Serve Humanity"));
+        list.add(new Map(26.460199, 87.280342," Biratnagar Serve Humanity"));
+        list.add(new Map(28.237988, 83.995590,"Pokhara Serve Humanity"));
+        list.add(new Map(28.063919, 81.619583,"Nepalganj Humanity"));
+        list.add(new Map(28.692397, 80.620806,"Dhangadi Serve Humanity"));
 
         String[] data=new String[list.size()];
 
@@ -122,12 +113,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
         double latitude=list.get(position).getLat();
         double longitude=list.get(position).getLon();
-        String mymarker=list.get(position).getMarker();
+        String myMarker=list.get(position).getMarker();
 
         center=CameraUpdateFactory.newLatLng(new LatLng(latitude,longitude));
-        zoom=CameraUpdateFactory.zoomTo(17);
+        zoom=CameraUpdateFactory.zoomTo(15);
 
-        marker= mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude)).title(mymarker));
+        marker= mMap.addMarker(new MarkerOptions().position(new LatLng(latitude,longitude)).title(myMarker));
         mMap.moveCamera(center);
         mMap.animateCamera(zoom);
         mMap.getUiSettings().setZoomControlsEnabled(true);
