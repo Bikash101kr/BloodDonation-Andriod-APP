@@ -23,6 +23,7 @@ import com.example.servehumanity.Url.URL;
 import com.example.servehumanity.api.UserAPI;
 import com.example.servehumanity.channel.CreateChannel;
 import com.example.servehumanity.response.UserResponse;
+import com.example.servehumanity.sensors.Fingerprint_Activity;
 
 import java.util.Objects;
 
@@ -112,14 +113,14 @@ public class LoginActivity extends AppCompatActivity {
             checkbox1.setChecked(true);
             edtUsername.setText(savedData.getString("username", ""));
             edtPassword.setText(savedData.getString("password", ""));
-   }
+        }
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 username = edtUsername.getText().toString().trim();
                 password = edtPassword.getText().toString().trim();
 
-               validationError = validateUser(username, password);
+                validationError = validateUser(username, password);
                 if (validationError) return;
 
                 UserAPI userAPI = URL.getInstance().create(UserAPI.class);
@@ -135,16 +136,15 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         URL.token = response.body().getToken();
                         URL.userID = username;
-                        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-                        displayNotificationSuccess();
-                        finish();
 
                         SharedPreferences isFingerPrintAuthOn = getSharedPreferences("Auth", MODE_PRIVATE);
+
+
 
                         if (isFingerPrintAuthOn.getString("fingerPrint", "false").equals("true")) {
                             startActivity(new Intent(LoginActivity.this, Fingerprint_Activity.class));
                         } else {
-                           startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                         }
                         displayNotificationSuccess();
                         finish();
@@ -183,6 +183,3 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 }
-
-
-

@@ -1,6 +1,5 @@
 package com.example.servehumanity.fragments;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +20,6 @@ import com.example.servehumanity.R;
 public class HomeFragment extends Fragment {
     Button btnCamps, btnEmergency, btnContact, btnDonate, btnRequest, btnBloodBank;
     public static Boolean isUpdated = false;
-    Context context;
     public HomeFragment() {
 
     }
